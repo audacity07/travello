@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'); 
+
+* {
+  /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Nav and Hero Section */
+.hero-section-container{
+  background-image: url("../images/LandingPage/hero_image2.jpg");
+  background-repeat: no-repeat;
+  height: 800px;
+  color: white;
+  background-image: cover;
+  /* background-position: center center; */
+  background-position: 50% 50%;
+}
+
+/* blur part */
+/* .hero-section-container {
+  position: relative;
+  height: 800px;
+  color: white;
+} */
+
+/* Add the blurred background using a separate div */
+/* .blurry-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/LandingPage/hero_image2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(1px) grayscale(50%);
+  z-index: -1;
+} */
+
+/* end of blur part */
+
+.hero-section-container nav * {
+  width: 80%;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  font-family: Darker Grotesque, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  /* margin-top: 10px; */
+}
+
+.card-1 {
+  display: flex;
+}
+
+.logo {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.logo > img {
+  width: 100px;
+  height: 100px;
+}
+
+.card-2 {
+  display: flex;
+}
+
+.hero-section-container nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-section-container .title-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: Darker Grotesque, sans-serif;
+}
+
+.hero-section-container .title-container h1 {
+  font-size: 300px;
+}
+
+.hero-section-container .title-container h4 {
+  font-size: 50px;
+}
+
+/* end of Nav and Hero Section */
+
+/* destination info card */
+.destination-info-card {
+  width: 80%;
+  margin: auto;
+  padding: 120px 0 70px 0;
+  /* font-family: Darker Grotesque, sans-serif; */
+  font-family: DM Sans, sans-serif;
+  display: flex;
+  border-bottom: 1px solid rgb(180, 178, 178);
+  justify-content: space-between;
+}
+.destination-info-card div:nth-child(1) {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.destination-info-card div:nth-child(2) {
+  width: 50%;
+  font-size: 40px;
+  font-weight: 600;
+  /* line-height: 1.2; */
+}
+/* end of destination info card */
+
+/* destination cards */
+.destination-cards-container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  font-family:  Darker Grotesque, sans-serif;
+  padding: 50px 0 50px 0;
+}
+.destination-cards-container .card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.destination-cards-container .card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* hover */
+.destination-cards-container .card > div{
+  overflow: hidden; /* To ensure smooth overflow when scaled */
+  transition: transform 0.3s ease;
+}
+.destination-cards-container .card img {
+  transition: transform 0.3s ease;
+}
+.destination-cards-container .card div:hover {
+  transform: scale(1.05);
+}
+/* hover */
+
+.destination-cards-container .card div {
+  position: relative;
+}
+
+.destination-cards-container .card div > p {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  padding: 5px 10px 8px 10px;
+  background-color: white;
+  font-weight: 800;
+  font-size: 18px;
+  border-radius: 19px;
+}
+
+.destination-cards-container .card h3 {
+  font-size: 28px;
+}
+
+.destination-cards-container .card > p {
+  color: gray;
+  font-family: DM Sans, sans-serif;
+  font-size: 16px;
+}
+/* end of destination cards */
+
+
+/* booking info card */
+.mid-section-black-div {
+  background-color: #151515;
+  color: white;
+}
+.booking-info-card {
+  width: 80%;
+  margin: auto;
+  padding: 120px 0 70px 0;
+  /* font-family: Darker Grotesque, sans-serif; */
+  font-family: DM Sans, sans-serif;
+  display: flex;
+  border-bottom: 1px solid grey;
+  justify-content: space-between;
+}
+
+.booking-info-card div:nth-child(1) {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.booking-info-card div:nth-child(2) {
+  width: 50%;
+  font-size: 40px;
+  font-weight: 600;
+  /* line-height: 1.2; */
+}
+/* end of booking info card */
+
+/* top destination card */
+.top-destination-card {
+  width: 80%;
+  display: flex;
+  gap: 60px;
+  margin: auto;
+  padding: 50px 0 0 0;
+  font-family: DM Sans, sans-serif;
+  justify-content: space-between;
+}
+
+.top-destination-card h4 {
+  font-size: 25px;
+}
+
+.top-destination-card .link p {
+  font-size: 15px;
+  color: rgb(179, 177, 177);
+}
+
+.top-destination-card .mini-card-container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.top-destination-card .mini-card-container .mini-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-destination-card .mini-card-container .mini-card .link{
+  display: flex;
+  gap: 30px;
+}
+
+.top-destination-card .max-card-container {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.top-destination-card .max-card-container .mini-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.top-destination-card .max-card-container .button-container {
+  display: flex;
+  gap: 10%;
+}
+
+.top-destination-card .max-card-container #book-now {
+  padding: 1.5% 2% 1.5% 2%;
+  background-color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #151515;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.top-destination-card .max-card-container #view-detail {
+  padding: 1.5% 2% 1.5% 2%;
+  background-color: #151515;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  border: 1px solid rgb(156, 155, 155);
+}
+
+.top-destination-card .max-card-container div:nth-child(3) {
+  width: 100%;
+  height: 55%;
+}
+
+.top-destination-card .max-card-container div:nth-child(3) img{
+ width: 100%;
+ border-radius: 20px;
+ height: 100%;
+ object-fit: cover;
+}
+/* end of top destination card */
+
+/* choose-us info card */
+.choose-us-info-card {
+  width: 80%;
+  margin: auto;
+  padding: 120px 0 70px 0;
+  /* font-family: Darker Grotesque, sans-serif; */
+  font-family: DM Sans, sans-serif;
+  display: flex;
+  border-bottom: 1px solid rgb(180, 178, 178);
+  justify-content: space-between;
+}
+
+.choose-us-info-card div:nth-child(1) {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.choose-us-info-card div:nth-child(2) {
+  width: 50%;
+  font-size: 40px;
+  font-weight: 600;
+  /* line-height: 1.2; */
+}
+/* end of choose-us info card */
+
+/* choose us cards */
+.choose-cards-container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15%;
+  font-family: Darker Grotesque, sans-serif;
+  padding: 50px 0 50px 0;
+}
+.choose-cards-container .card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.choose-cards-container .card > div{
+  width: 70px;
+}
+
+.choose-cards-container .card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.choose-cards-container .card h3 {
+  font-size: 28px;
+}
+
+.choose-cards-container .card > p {
+  color: gray;
+  font-family: DM Sans, sans-serif;
+  font-size: 16px;
+}
+/* end of choose us cards */
+
+/* review section */
+.review-container {
+  display: flex;
+  gap: 8%;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: DM Sans, sans-serif;
+  margin-bottom: 100px;
+}
+
+.review-container .image-card {
+  width: 25%;
+}
+
+.review-container .image-card img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.review-container .review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-container .review-card > p {
+  line-height: 1.5;
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px solid rgb(180, 178, 178);
+  padding-bottom: 3%;
+}
+
+.review-container .name-arrow-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.review-container .name-arrow-container .name-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-container .name-arrow-container .name-container div{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.review-container .name-arrow-container .name-container div > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.review-container .name-arrow-container .name-container > p {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.review-container .name-arrow-container .arrow-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18%;
+}
+
+.review-container .name-arrow-container .arrow-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgb(180, 178, 178);
+  cursor: pointer;
+}
+
+.review-container .name-arrow-container .arrow-container div i {
+  font-size: 25px;
+}
+
+/* end of review section */
+
+/* footer container */
+.footer-outer-black-container {
+  background-color: #151515;
+  color: white;
+  padding-top: 100px;
+  font-family: Darker Grotesque, sans-serif;
+}
+
+.footer-outer-black-container .footer-inner-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  gap: 25%;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  font-size: 20px;
+}
+
+#footer-input::placeholder {
+  font-size: 20px;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 h3 {
+  font-size: 100px;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 > div{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 > div > div {
+  border-bottom: 1px solid rgb(151, 148, 148);
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-arrow-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 > div input{
+  border: none;
+  outline: none;
+  background-color: #151515;
+  padding: 13px 0;
+  color: white;
+  width: 80%;
+  font-family: inherit;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  gap: 15%;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 > div p:nth-child(2){
+  text-align: right;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 > h4 {
+  font-size: 40px;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 > h4 > span {
+  color: rgb(180, 178, 178);
+}
+
+footer {
+  padding-top: 50px;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+footer .copyright {
+  font-size: 20px;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .copyright p i {
+  font-size: 15px;
+}
+footer .social-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  font-size: 20px;
+}
+/* end of footer container */
