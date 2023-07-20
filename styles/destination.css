@@ -1,3 +1,11 @@
+@import "compass/css3";
+@import url(https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+@import url(https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap); 
+/* * {
+  border: 1px solid red;
+} */
+
 .navigation {
   border: 1px solid black;
   height: 60px;
@@ -185,12 +193,13 @@ color: #5fa8d3;
   border: 1px solid black;
   width: 90%;
   margin: auto;
-  padding: 20px;
+  padding: 40px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
   gap: 20px;
   text-align: center;
+  place-items: center;
 }
 
 .card {
@@ -228,8 +237,61 @@ img {
   backdrop-filter: blur(5px);
 }
 
-.listHead, .price {
+.listHead, .price, .btn {
   position: relative;
   top : -10%;
   width : 90%;
+}
+
+
+.custom-loader {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+  width: 50px;
+  height: 50px;
+  display: grid;
+  border:4px solid #0000;
+  border-radius: 50%;
+  border-color:#C7C6ED #0000;
+  animation: s6 2s infinite linear;
+}
+.custom-loader::before,
+.custom-loader::after {    
+  content:"";
+  grid-area: 1/1;
+  margin:2px;
+  border:inherit;
+  border-radius: 50%;
+}
+.custom-loader::before {
+  border-color:#000000 #0000;
+  animation:inherit; 
+  animation-duration: 1s;
+  animation-direction: reverse;
+}
+.custom-loader::after {
+  margin:8px;
+}
+
+@keyframes s6 { 
+  100%{transform: rotate(1turn)}
+}
+
+
+.btn {
+  width: 90%;
+  padding: 10px;
+  font-weight: bold;
+  font-family: Darker Grotesque;
+  font-size: 20px;
+  background-color: white;
+  transition: transform .2s;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05);
 }
