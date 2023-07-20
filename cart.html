@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0%;
+            margin: 0%;
+        }
+        .container{
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            margin: auto;
+            gap: 10px;
+
+        }
+        .container img{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <div>
+        <h1 class="total"></h1>
+        <h1 class="person"></h1>
+        <button class="plus">+</button>
+        <button class="minus">-</button>
+    </div>
+</body>
+</html>
+<script>
+
+    let data=[
+
+        {image:"https://lh5.googleusercontent.com/p/AF1QipNEFfrn1k5JSPmvXRugafk3H9AfA2mXXIQncdnh=w204-h114-n-k-no",
+        place:"munnar",
+        price:2500},
+
+        {image:"https://lh5.googleusercontent.com/p/AF1QipNEhBrVxLTHb4CM3bzMbymPA1ILDadX-9Db93Y=w204-h114-n-k-no",
+        place:"hyderabad",
+        price:3500},
+
+        {
+        image:"https://lh5.googleusercontent.com/p/AF1QipPA-3HE_FRfS90TjTDbdsCYxqW7Q79TM_u_2VU=w204-h114-n-k-no",
+        place:"shimla",
+        price:4500
+        },
+
+        {
+            image:"https://lh3.googleusercontent.com/proxy/57wQ7I1rwHCmNS__E0uqQ9YqERmV2pX4sWBCIvpMgbN-Bux7CgkYtyk-QdyGoSNoSXZGUQZOkg7BOHb7waHweFY6ae8PW1lf4My7ZG2ECVLQ_DDggTDxc8JdzQwrvtop2MS3MkEOlelkg4lpQ1nH00khhtdJbPA=w548-h318-n-k-no",
+        place:"kodaikanal",
+        price:4000
+        }
+        
+]
+    let container=document.querySelector(".container");
+
+    let cardData=[];
+
+
+  displayData(data)
+ 
+ function displayData(data){
+    data.forEach((item)=>{
+        
+        let div1=document.createElement("div");
+        let img=document.createElement("img");
+        let place=document.createElement("h2");
+        let price=document.createElement("p");
+        let btn = document.createElement("button");
+    
+        img.setAttribute("src",item.image);
+        place.innerText=item.place;
+        price.innerText=item.price;
+        btn.innerText="Add to Cart"
+
+        btn.addEventListener("click",function(){
+            console.log("hii")
+            cardData.push(item);
+            localStorage.setItem("cartData",JSON.stringify(cardData));
+            // JSON.stringify("cartData",cardData);
+
+        })
+
+        div1.append(img,place,price,btn);
+        container.append(div1)
+
+    })
+
+
+ }
+
+
+
+   let total=document.querySelector(".total");
+   let person=document.querySelector(".person");
+    let i=1;
+    total.innerHTML="Total ="+data.price;
+    person.innerHTML="person ="+i;
+
+   let plus=document.querySelector(".plus").addEventListener("click",function(){
+    i++;
+    total.innerHTML="Total="+(i*data.price);
+    person.innerHTML="person ="+i;
+   })
+   let minus=document.querySelector(".minus").addEventListener("click",function(){
+    i--;
+    total.innerHTML="Total="+(i*data.price);
+    person.innerHTML="person ="+i;
+   })
+
+
+
+
+</script>
