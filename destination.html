@@ -10,45 +10,129 @@
     <link rel="stylesheet" href="styles/destination.css">
 </head>
 <body>
-    
-    <nav class="navigation">
+  
 
+  <div class="hero-section-container">
+    <!-- nav bar -->
+    <nav>
+      <div class="card-1">
+        <a href="#">DESTINATION</a>
+        <a href="#">ABOUT US</a>
+      </div>
+      <div class="logo">
+        <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
+      </div>
+      <div class="card-2">
+        <a href="#">LOGIN</a>
+        <a href="#">SIGN UP</a>
+      </div>
     </nav>
+    <!-- nav bar ends -->
+  </div>
+
+    <!-- Sort & Filer bar -->
 
     <div class="sort-filter">
 
 
       <div class="filter-div">
         <label id="tag" for="Price">Filter By Price :</label>
-        <input type="number" placeholder="Min Price" class="min-price"></input>
-        <input type="number" placeholder="Max Price" class="max-price"></input>
+        <input type="number" onclick="this.classList.toggle('anim')" placeholder="Min Price" class="min-price"></input>
+        <input type="number" onclick="this.classList.toggle('anim')" placeholder="Max Price" class="max-price"></input>
+        <div class="hvr-underline-reveal" class="search">
+          <i class="fa-solid fa-magnifying-glass" style="color: #010409"></i>
+        </div>
       </div>
       
       <div class="form">
-        <input type="text" name="name" autocomplete="off" required>
+        <input id="input" type="text" name="name" autocomplete="off" required>
         <label for="name" class="label-name">
             <span class="content-name">Search for Desired Place here</span>
         </label>
       </div>
-
-      <div class="hvr-underline-reveal" class="search">
-        
-        <i class="fa-solid fa-magnifying-glass" style="color: #010409"></i>
-      </div>
+      
+      
 
       <div class="sort-div">
         <label id="tag" for="Sorting">Sort By Price :</label>
-        <button class="button-89" role="button">Ascending Order</button>
-        <button class="button-89" role="button">Descending Order</button>
+        <button id="asc_btn" class="button-89" role="button">Ascending Order</button>
+        <button id="desc_btn" class="button-89" role="button">Descending Order</button>
       </div>
           
   </div>
   
+  <!-- Sort & Filter bar ends -->
+
+  <!-- Cards container -->
+
   <div class="card-container">
     <div class="custom-loader"></div>
   </div>
 
+  <!-- Card container ends -->
 
+  <!-- Footer starts -->
+
+  <div class="footer-outer-black-container">
+    <div class="footer-inner-container">
+      <div class="card-1">
+        <h3>Travello</h3>
+        <div>
+          <p>Subscribe to our newsletter</p>
+          <div>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              id="footer-input"
+            />
+            <div class="right-arrow-footer">
+              <i class="fa-solid fa-arrow-right" style="color: #ffffff"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-2">
+        <h4>
+          We team up with ambitious global brands.
+          <span>Let's stay in touch</span>
+        </h4>
+        <div>
+          <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
+          <p>(239) 555-0108 hello@travello.com</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="logo">
+        <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
+      </div>
+      <div class="copyright">
+        <p>
+          All right reserved
+          <i class="fa-regular fa-copyright" style="color: #808080"></i> 2023
+          Travello
+        </p>
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com/" target="_blank">
+          <i class="fa-brands fa-facebook-f" style="color: #ffffff"></i>
+        </a>
+        <a href="https://in.linkedin.com/" target="_blank">
+          <i class="fa-brands fa-linkedin-in" style="color: #ffffff"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+          <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+        </a>
+        <a href="https://twitter.com/" target="_blank">
+          <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Footer ends -->
 </body>
 </html>
 

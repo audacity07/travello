@@ -1,11 +1,27 @@
-fetch(`http://localhost:3000/destination`).then((res) => {
-    return res.json();
-}).then((data) => {
-    console.log(data);
-    setTimeout(function() {
-        displayData(data);
-    }, 1000)
-})
+// fetch(`https://travelloproject.onrender.com/destination`).then((res) => {
+//     return res.json();
+// }).then((data) => {
+//     console.log(data);
+//     setTimeout(function() {
+//         displayData(data);
+//     }, 1000)
+// })
+
+
+async function getData(url) {
+    try {
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+        setTimeout(function() {
+            displayData(data);
+        }, 1000)
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+getData(`https://travelloproject.onrender.com/destination`)
 
 let mainSection = document.querySelector(".card-container")
 
@@ -29,6 +45,9 @@ function displayData(data) {
         let about =document.createElement("p");
         about.setAttribute("class", "about");
         about.innerText = ele.about;
+        let popo = document.createElement("h2");
+        popo.setAttribute("class", "popular")
+        popo.innerText = `Popular Places to Visit in ${ele.location}`
         let listHead = document.createElement("ul");
         listHead.setAttribute("class", "listHead")
         for(let i=0;i<ele.popularPlaces.length;i++) {
@@ -38,36 +57,90 @@ function displayData(data) {
         }
         let price = document.createElement("h3");
         price.setAttribute("class", "price");
-        price.innerText = `Rs. ${ele.price}`;
+        price.innerText = `₹ ${ele.price}/-`;
         let button = document.createElement("button");
         button.setAttribute("class", "btn");
-        button.innerText = "Add to Cart"
+        button.innerText = "Add to Cart";
+        button.addEventListener("click", function() {
+            addToPackage(ele);
+        })
 
         imgDiv.append(img)
-        card.append(location, tagline, imgDiv, about, listHead, price, button);
+        card.append(location, tagline, imgDiv, about, popo, listHead, price, button);
         mainSection.append(card)
 
     })
 }
 
-{/* <button class="button-82-pushable" role="button">
-  <span class="button-82-shadow"></span>
-  <span class="button-82-edge"></span>
-  <span class="button-82-front text">
-    Button 82
-  </span>
-</button> */}
+document.querySelector('#asc_btn').addEventListener("click", function() {
+    fetch(`https://travelloproject.onrender.com/destination?_sort=price&_order=asc`).then((res) => {
+        return res.json();
+    }).then((data) => {
+        console.log(data);
+        displayData(data);
+    })
+})
 
-// {
-//     "id": 1,
-//     "location": "Kerala",
-//     "tagline": "God's Own Country",
-//     "image": "https://static-blog.treebo.com/wp-content/uploads/2018/06/Kerala.jpg",
-//     "about": "Kerala is one of the prettiest states, rightfully dubbed Gods Own Country. Here you will find pristine beaches at Kovalam, Muzhappilangad and Varkala. Besides beaches, the state also has a plethora of historical monuments, enthralling waterfalls and some breathtaking hill stations. There are also plenty of ecotourism drives conducted to promote sustainable tourism.",
-//     "popularPlaces": [
-//         "Alleppey",
-//         "Munnar",
-//         "Kumarakom"
-//     ],
-//     "price": "6009"
+document.querySelector('#desc_btn').addEventListener("click", function() {
+    fetch(`https://travelloproject.onrender.com/destination?_sort=price&_order=desc`).then((res) => {
+        return res.json();
+    }).then((data) => {
+        console.log(data);
+        displayData(data);
+    })
+})
+
+
+// document.querySelector("#input").addEventListener("input", function(){
+//     temp();
+// })
+
+// function deBounce(func, delay) {
+//     let timer;
+
+//     return function() {
+//         if(timer) {
+//             clearTimeout(timer);
+//         }
+
+//         timer = setTimeout(function() {
+//             func()
+//         }, delay)
+//     }
 // }
+
+
+// let temp = deBounce(getData, 2000)
+
+
+let userUrl = `https://users-mock-api.onrender.com/users`;
+
+
+let packageData = [];
+let user;
+function addToPackage(ele) {
+    // console.log(ele)
+    fetch(`${userUrl}?id=2`).then((res) => {
+        return res.json();
+    }).then((data) => {
+        // console.log(data);
+        user = data;
+        console.log(user)
+    })
+    
+    packageData.push(ele);
+    console.log(packageData)
+    fetch(`${userUrl}?id=2`, {
+        method : "PATCH",
+        headers : {
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify({
+            packages : packageData
+        })
+    }).then((res) => {
+        return res.json();
+    }).then((data) => {
+        console.log(data);
+    })
+}
