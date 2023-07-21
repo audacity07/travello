@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+  /* border: 1px solid red; */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Public Sans", sans-serif;
+}
+body {
+  background-color: #f6f7f8;
+}
+
+.main-outer-container {
+  display: flex;
+  position: relative;
+}
+
+/* left container */
+
+.left-container {
+  width: 25%;
+  position: fixed;
+  height: 95vh;
+  /* margin: 1% 1%; */
+  left: 1%;
+  top: 2.5%;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.left-container .logo-container {
+  width: 80px;
+  height: 80px;
+  margin: 5% 0 7% 5%;
+}
+
+.left-container .logo-container img {
+  width: 100%;
+}
+
+.admin-card {
+  display: flex;
+  margin: 5% 5% 10% 5%;
+  gap: 10%;
+  padding: 5%;
+  background-color: #EDEFF1;
+  border-radius: 10px;
+}
+
+.admin-card .admin-image-container {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.admin-card .admin-image-container img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.admin-card h4 {
+  display: flex;
+  align-items: center;
+}
+
+.admin-options {
+  margin: 0 5% 0 5%;
+  background-color: #EDEFF1;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #637381;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 5% 0 5% 5%;
+}
+
+.admin-options .user-card {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.admin-options .user-card .user-icon i {
+  font-size: 23px;
+}
+
+.admin-options .destination-card {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
+.admin-options .destination-card .destination-icon i {
+  font-size: 23px;
+}
+
+/* end of left container */
+
+/* right container */
+.right-container {
+  position: fixed;
+  left: 30%;
+  top: 2.5%;
+  right: 2.5%;
+  height: 95vh;
+}
+
+.right-container .info-new-user-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 2% 3% 2%;
+}
+
+.right-container .info-new-user-button button {
+  padding: 1.2%;
+  border-radius: 5px;
+  background-color: #2065D1;
+  color: white;
+  border: none;
+  font-size: 18px;
+  box-shadow: rgba(32, 101, 209, 0.24) 0px 8px 16px 0px;
+  cursor: pointer;
+}
+
+.right-container .info-new-user-button button .inside-button {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-container .user-table {
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 0 2%;
+}
+
+.right-container .user-table .search-card {
+  display: flex;
+  padding: 3% 0;
+  gap: 14px;
+  align-items: center;
+  font-size: 22px;
+}
+
+.right-container .user-table .search-card input {
+  font-family: "Public Sans", sans-serif;
+  font-size: 19px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgb(218, 214, 214);
+  padding-bottom: 5px;
+}
+
+/* actual table */
+.user-table table .heading .head-row{
+  background-color: #F4F6F8;
+}
+
+.user-table table .heading .head-row th {
+  width: 200px;
+  padding: 18px 0 ;
+}
+
+.user-table table .body-container {
+  text-align: center;
+}
+
+.user-table table .body-container .table-row td {
+  padding: 18px 0;
+}
+
+.user-table table .body-container .table-row td .edit-button{
+  border: none;
+  background-color: #DCF1D7;
+  color: #229A16;
+  font: inherit;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.user-table table .body-container .table-row td .delete-button{
+  border: none;
+  background-color: #F7DBDB;
+  color: #B72136;
+  font: inherit;
+  cursor: pointer;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+/* end of actual table */
+/* end of right container */

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./admin.css" />
+    <title>Admin Panel</title>
+  </head>
+  <body>
+    <div class="main-outer-container">
+      <!-- left container -->
+      <div class="left-container">
+        <div class="logo-container">
+          <img src="./black_logo.png" alt="logo" />
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-image-container">
+            <img src="./admin_avatar.jpg" alt="admin image" />
+          </div>
+          <h4>Travello Admin</h4>
+        </div>
+
+        <div class="admin-options">
+          <div class="user-card">
+            <div class="user-icon">
+              <i class="fa-solid fa-user" style="color: #616161"></i>
+            </div>
+            <p>User</p>
+          </div>
+
+          <div class="destination-card">
+            <div class="destination-icon">
+              <i class="fa-solid fa-earth-americas" style="color: #616161"></i>
+            </div>
+            <p>Destination</p>
+          </div>
+        </div>
+      </div>
+      <!-- end of left container -->
+
+      <!-- right container -->
+      <div class="right-container">
+        <div class="info-new-user-button">
+          <h2>User Details</h2>
+          <button>
+            <div class="inside-button">
+              <i class="fa-solid fa-plus" style="color: #ffffff"></i>
+              <p>New User</p>
+            </div>
+          </button>
+        </div>
+
+        <!-- user table -->
+        <div class="user-table">
+          <div class="search-card">
+            <div class="serach-icon">
+              <i
+                class="fa-solid fa-magnifying-glass"
+                style="color: #a8a8a8"
+              ></i>
+            </div>
+            <input type="text" placeholder="Search user..." />
+          </div>
+
+          <!-- actual table -->
+          <table>
+            <thead class="heading">
+              <tr class="head-row">
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody class="body-container">
+              <tr class="table-row">
+                <td>testuser1</td>
+                <td>testuser1@gmail.com</td>
+                <td>tu1</td>
+                <td><button class="edit-button">Edit</button></td>
+                <td><button class="delete-button">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- end of right container -->
+    </div>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>
