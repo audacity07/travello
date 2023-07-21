@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login || Sign up form</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
     <link rel="stylesheet" href="./styles/login.css">
 </head>
@@ -15,23 +22,35 @@
             <form action="#">
                 <h1>Create Account</h1>
                 <div class="social-container">
-                    <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+                    <!-- <a href="#" class="social"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
                     <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" class="social"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="social"><i class="fa fa-twitter"></i></a> -->
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <i class="fa-brands fa-facebook-f" style="color: #151515"></i>
+                      </a>
+                      <a href="https://in.linkedin.com/" target="_blank">
+                        <i class="fa-brands fa-linkedin-in" style="color: #151515"></i>
+                      </a>
+                      <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fa-brands fa-instagram" style="color: #151515"></i>
+                      </a>
+                      <a href="https://twitter.com/" target="_blank">
+                        <i class="fa-brands fa-twitter" style="color: #151515"></i>
+                      </a>
                 </div>
                 <span>or use your email for registration</span>
                 <div class="infield">
                     <input type="text" placeholder="Name" id="" />
-                    <label for=""></label>
+                    <label></label>
                 </div>
                 <div class="infield">
                     <input type="email" placeholder="Email" name="email" />
-                    <label for=""></label>
+                    <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Password"  />
-                    <label for=""></label>
+                    <input class="length" type="password" placeholder="Password"  />
+                    <label></label>
                 </div>
                 <button>Sign up</button>
             </form>
@@ -40,19 +59,31 @@
             <form action="#">
                 <h1>Sign in</h1>
                 <div class="social-container">
-                    <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+                    <!-- <a href="#" class="social"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
                     <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" class="social"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="social"><i class="fa fa-twitter"></i></a> -->
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <i class="fa-brands fa-facebook-f" style="color: #151515"></i>
+                      </a>
+                      <a href="https://in.linkedin.com/" target="_blank">
+                        <i class="fa-brands fa-linkedin-in" style="color: #151515"></i>
+                      </a>
+                      <a href="https://www.instagram.com/" target="_blank">
+                        <i class="fa-brands fa-instagram" style="color: #151515"></i>
+                      </a>
+                      <a href="https://twitter.com/" target="_blank">
+                        <i class="fa-brands fa-twitter" style="color: #151515"></i>
+                      </a>
                 </div>
                 <span>or use your account</span>
                 <div class="infield">
                     <input type="email" placeholder="Email" name="email" />
-                    <label for=""></label>
+                    <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Password"  />
-                    <label for=""></label>
+                    <input class="length" type="password" placeholder="Password"  />
+                    <label></label>
                 </div>
                 <a href="#" class="forgot">Forgot your password?</a>
                 <button>Sign in</button>
@@ -75,6 +106,7 @@
             <button id="overlayBtn"></button>
         </div>
     </div>
+
 </body>
 </html>
 <script src="./scripts/login.js"></script>
