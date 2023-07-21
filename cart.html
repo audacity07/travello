@@ -21,17 +21,35 @@
         .container img{
             width: 100%;
         }
+
+        .cart{
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            margin: auto;
+            gap: 10px;
+
+        }
+        .cart img{
+            width: 100%;
+        }
         
     </style>
 </head>
 <body>
     <div class="container"></div>
-    <div>
-        <h1 class="total"></h1>
-        <h1 class="person"></h1>
+    <hr>
+
+        <h1 class="total">cart is empty</h1>
+
+        <div class="cart">
+
+        </div>
+
+        <!-- <h1 class="person"></h1>
         <button class="plus">+</button>
-        <button class="minus">-</button>
-    </div>
+        <button class="minus">-</button> -->
+    
 </body>
 </html>
 <script>
@@ -60,13 +78,26 @@
         
 ]
     let container=document.querySelector(".container");
+    let cart=document.querySelector(".cart");
+//----------cart local strorage--------------------------------------------
+    let cardArr=[];
 
-    let cardData=[];
+    let cartLs=localStorage.getItem("cartData");
+
+        
+        if(cartLs==null){
+        cartArr=[]
+        }
+        else{
+        cartArr=JSON.parse(cartLs);
+        }
 
 
+//display demo destination
   displayData(data)
  
  function displayData(data){
+   
     data.forEach((item)=>{
         
         let div1=document.createElement("div");
@@ -79,12 +110,14 @@
         place.innerText=item.place;
         price.innerText=item.price;
         btn.innerText="Add to Cart"
-
+//-----add to cart demo---------------
         btn.addEventListener("click",function(){
-            console.log("hii")
-            cardData.push(item);
-            localStorage.setItem("cartData",JSON.stringify(cardData));
+            item.person=1
+            item.tripPrice=item.price
+            cartArr.push(item);
+            localStorage.setItem("cartData",JSON.stringify(cartArr));
             // JSON.stringify("cartData",cardData);
+            displayCart(cartArr)
 
         })
 
@@ -95,25 +128,111 @@
 
 
  }
+//--------------------------------------------
+    let total=document.querySelector(".total");
+//    let person=document.querySelector(".person");
+//     let i=1;
+//     total.innerHTML="Total ="+data.price;
+//     person.innerHTML="person ="+i;
+
+//    let plus=document.querySelector(".plus").addEventListener("click",function(){
+//     i++;
+//     total.innerHTML="Total="+(i*data.price);
+//     person.innerHTML="person ="+i;
+//    })
+//    let minus=document.querySelector(".minus").addEventListener("click",function(){
+//     i--;
+//     total.innerHTML="Total="+(i*data.price);
+//     person.innerHTML="person ="+i;
+//    })
+//------------------------------------
+
+//---------display cart----------------------------
+//let totalTrip=0;
+
+displayCart(cartArr)
+function displayCart(data){
+    cart.innerHTML=""
+    let totalTrip=0;
+    data.forEach((item)=>{
+        
+        let div1=document.createElement("div");
+        let img=document.createElement("img");
+        let place=document.createElement("h2");
+        let price=document.createElement("p");
+        let trip_total=document.createElement("p");
+        let person=document.createElement("p")
+        let plus = document.createElement("button");
+        let minus = document.createElement("button");
+        let remove = document.createElement("button");
+    
+        img.setAttribute("src",item.image);
+        place.innerText=item.place;
+        price.innerText="price/person ="+item.price;
+        trip_total.innerText="trip cost ="+item.tripPrice
+        price.innerText=item.price;
+        person.innerText="person ="+item.person;
+        remove.innerText="remove"
+
+        plus.innerText="+";
+        minus.innerText="-";
+
+        plus.addEventListener("click",function(){
+
+            item.person++;
+            item.
+
+            localStorage.setItem("cartData",JSON.stringify(cartArr));
+            displayCart(cartArr)
+
+            })
 
 
 
-   let total=document.querySelector(".total");
-   let person=document.querySelector(".person");
-    let i=1;
-    total.innerHTML="Total ="+data.price;
-    person.innerHTML="person ="+i;
 
-   let plus=document.querySelector(".plus").addEventListener("click",function(){
-    i++;
-    total.innerHTML="Total="+(i*data.price);
-    person.innerHTML="person ="+i;
-   })
-   let minus=document.querySelector(".minus").addEventListener("click",function(){
-    i--;
-    total.innerHTML="Total="+(i*data.price);
-    person.innerHTML="person ="+i;
-   })
+            minus.addEventListener("click",function(){
+            if(item.person!=1){
+                item.person--;
+            
+            localStorage.setItem("cartData",JSON.stringify(cartArr));          
+            displayCart(cartArr)
+
+            }
+
+            })
+
+
+
+
+
+
+
+        div1.append(img,place,price,trip_total,person,plus,minus,remove)
+        cart.append(div1);
+
+        totalTrip+=item.tripPrice
+         total.innerHTML="Total ="+totalTrip;
+
+ 
+
+    })
+    
+   // total.innerHTML="Total ="+data.price;
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
