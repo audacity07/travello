@@ -1,2 +1,12 @@
 ###
 GET https://users-mock-api.onrender.com/users
+
+###
+POST https://users-mock-api.onrender.com/users
+Content-Type: application/json
+
+{
+  "name": "t4",
+  "email": "t4",
+  "password" "t4"
+}
