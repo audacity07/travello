@@ -3,32 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Adventure awaits</title>
     <link href="css/hover-min.css" rel="stylesheet">
     <link rel="stylesheet" href="animate.min.css">
     <script src="https://kit.fontawesome.com/f4ab59fe83.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/destination.css">
-</head>
-<body>
-  
+  </head>
+  <body>
+    
+    <div id="item-count">
+      0
+    </div>
+    <div class="cart">
+      <a href="card.html"><img src="../wonderful-sound-2096/images/DestinationPage/cart2.png" alt="Cart image"></i></a>
+    </div>
+
+    <div id="popup" class="popup">
+      <img src="../wonderful-sound-2096/images/DestinationPage/tick-33848.png" alt="">
+      <h2>Package added to Cart</h2>
+      <a href="card.html"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: black;"></i></a>
+      <button class="btn-popup" onclick="closePopup()">OK</button>
+    </div>
+
+    <div id="dopup" class="dopup">
+      <img src="../wonderful-sound-2096/images/DestinationPage/thinking.png" alt="">
+      <h3>It seems that this Package is already in your cart</h3>
+      <a href="card.html"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: black;"></i></a>
+      <button class="btn-dopup" onclick="closedopup()">OK</button>
+    </div>
 
   <div class="hero-section-container">
     <!-- nav bar -->
     <nav>
       <div class="card-1">
-        <a href="#">DESTINATION</a>
-        <a href="#">ABOUT US</a>
+        <a class="hover-underline-animation" href="#">DESTINATION</a>
+        <a class="hover-underline-animation" href="#">ABOUT US</a>
       </div>
       <div class="logo">
         <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
       </div>
       <div class="card-2">
-        <a href="#">LOGIN</a>
-        <a href="#">SIGN UP</a>
+        <a class="hover-underline-animation" href="index.html">HOME</a>
+        <a class="hover-underline-animation" href="cart.html">MY CART</a>
       </div>
     </nav>
     <!-- nav bar ends -->
   </div>
+
 
     <!-- Sort & Filer bar -->
 
@@ -39,7 +60,7 @@
         <label id="tag" for="Price">Filter By Price :</label>
         <input type="number" onclick="this.classList.toggle('anim')" placeholder="Min Price" class="min-price"></input>
         <input type="number" onclick="this.classList.toggle('anim')" placeholder="Max Price" class="max-price"></input>
-        <div class="hvr-underline-reveal" class="search">
+        <div id="filter-btn" class="hvr-underline-reveal" class="search">
           <i class="fa-solid fa-magnifying-glass" style="color: #010409"></i>
         </div>
       </div>
@@ -67,6 +88,7 @@
 
   <div class="card-container">
     <div class="custom-loader"></div>
+    <h2>Change your attitude by changing latitudes</h2>
   </div>
 
   <!-- Card container ends -->

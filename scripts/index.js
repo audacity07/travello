@@ -61,3 +61,12 @@ document
 
 // Initial display
 displayReview(currentReviewIndex);
+
+fetch(`https://travello-login-api.onrender.com/login`).then((res) => {
+  return res.json();
+}).then((data) => {
+  console.log(data);
+  if(data.length > 0) {
+    document.querySelector("#user-name").innerText = `HI ${(data[0].name).toUpperCase()}`;
+  }
+})
