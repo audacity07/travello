@@ -10,126 +10,443 @@
             padding: 0%;
             margin: 0%;
         }
+        .page{
+            display: flex;
+        }
+        .top{
+            width: 20%;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin-top: 70px;
+            margin-bottom: 20px;
+           height: 150px;
+           padding-left: 15px;
+           padding-right: 15px;
+          
+        }
+        .top div{
+            display: flex;
+            justify-content: space-around;
+        }
         .container{
             width: 80%;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(1,1fr);
             margin: auto;
             gap: 10px;
 
         }
         .container img{
-            width: 100%;
+            width: 80%;
         }
 
         .cart{
-            width: 80%;
+            width: 70%;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(1,1fr);
             margin: auto;
-            gap: 10px;
+            gap: 40px;
+            margin-top: 70px;
 
         }
         .cart img{
             width: 100%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
         }
+        .cartMerge{
+            display: flex;
+            border: 1px solid red;
+            border-radius: 20px;
+        }
+        .cartMerge>div{
+            width: 50%;
+        }
+        .cartMerge>div img{
+            width: 90%;
+        }
+        .divButtons{
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-evenly; */
+        }
+        .divPerson{
+            display: flex;
+           
+        }
+        .divSection2{
+            display: flex;
+            /* justify-content: space-evenly; */
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .divSection2>div{
+            width: 50%;
+        }
+
+        .divSection2 button{
+            width: 30%;
+        }
+        
+        .div2{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+            
+            
+
+
+
         
     </style>
 </head>
 <body>
-    <div class="container"></div>
-    <hr>
-
-        <h1 class="total">cart is empty</h1>
-
-        <div class="cart">
-
+    <div class="page">
+        <div class="cart"></div>
+ 
+        <div class="top">
+            <p class="total"></p>
+            <p class="GST">Gst=Rs 1000/-</p>
+            <hr>
+            <div>
+                <h4 class="totalGST">Total=Rs 50,000/-</h4>
+                <button class="buyTotal">BUY total package</button>
+            </div>
         </div>
-
-        <!-- <h1 class="person"></h1>
-        <button class="plus">+</button>
-        <button class="minus">-</button> -->
-    
-</body>
-</html>
-<script>
-
-    let data=[
-
-        {image:"https://lh5.googleusercontent.com/p/AF1QipNEFfrn1k5JSPmvXRugafk3H9AfA2mXXIQncdnh=w204-h114-n-k-no",
-        place:"munnar",
-        price:2500},
-
-        {image:"https://lh5.googleusercontent.com/p/AF1QipNEhBrVxLTHb4CM3bzMbymPA1ILDadX-9Db93Y=w204-h114-n-k-no",
-        place:"hyderabad",
-        price:3500},
-
-        {
-        image:"https://lh5.googleusercontent.com/p/AF1QipPA-3HE_FRfS90TjTDbdsCYxqW7Q79TM_u_2VU=w204-h114-n-k-no",
-        place:"shimla",
-        price:4500
-        },
-
-        {
-            image:"https://lh3.googleusercontent.com/proxy/57wQ7I1rwHCmNS__E0uqQ9YqERmV2pX4sWBCIvpMgbN-Bux7CgkYtyk-QdyGoSNoSXZGUQZOkg7BOHb7waHweFY6ae8PW1lf4My7ZG2ECVLQ_DDggTDxc8JdzQwrvtop2MS3MkEOlelkg4lpQ1nH00khhtdJbPA=w548-h318-n-k-no",
-        place:"kodaikanal",
-        price:4000
-        }
         
-]
-    let container=document.querySelector(".container");
-    let cart=document.querySelector(".cart");
-//----------cart local strorage--------------------------------------------
-    let cardArr=[];
-
-    let cartLs=localStorage.getItem("cartData");
-
+    </div>
         
+        
+    </body>
+    </html>
+    <script>
+        let cart=document.querySelector(".cart");
+        let total=document.querySelector(".total");
+        let GST=document.querySelector(".GST");
+        let totalGST=document.querySelector(".totalGST");
+     
+        
+        let cardArr=[];
+        let cartLs=localStorage.getItem("cartData");
+
         if(cartLs==null){
         cartArr=[]
+        // getData()
         }
         else{
         cartArr=JSON.parse(cartLs);
+        displayCart(cartArr)
         }
 
 
-//display demo destination
-  displayData(data)
- 
- function displayData(data){
-   
+        
+
+//---------display cart----------------------------
+
+let totalTrip=0;
+
+async function getData(){
+    try{
+        let res=await fetch(`https://users-mock-api.onrender.com/users`);
+        let data=await res.json();
+        console.log(data)
+
+        data.forEach((item)=>{
+            if(item.id==2){
+                cartArr=item.packages
+
+                 cartArr=cartArr.map((item)=>{ 
+                     item.tripPrice=item.price,
+                     item.person=1
+                    return item })
+                console.log(cartArr)
+                localStorage.setItem("cartData",JSON.stringify(cartArr))
+                //console.log(item.packages)
+                displayCart(cartArr)
+            }
+        })
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+//getData();
+
+//console.log(cartArr)
+
+function displayCart(data){
+    cart.innerHTML=""
+    let totalTrip=0;
+    let gstValue=0;
+    let totalGstValue=0;
     data.forEach((item)=>{
         
         let div1=document.createElement("div");
+        let div2=document.createElement("div");
+        div1.className="div1"
+        div2.className="div2"
+
         let img=document.createElement("img");
         let place=document.createElement("h2");
-        let price=document.createElement("p");
-        let btn = document.createElement("button");
-    
-        img.setAttribute("src",item.image);
-        place.innerText=item.place;
-        price.innerText=item.price;
-        btn.innerText="Add to Cart"
-//-----add to cart demo---------------
-        btn.addEventListener("click",function(){
-            item.person=1
-            item.tripPrice=item.price
-            cartArr.push(item);
-            localStorage.setItem("cartData",JSON.stringify(cartArr));
-            // JSON.stringify("cartData",cardData);
-            displayCart(cartArr)
+        let tagLine=document.createElement("p");
 
+        let price=document.createElement("p");
+        let trip_total=document.createElement("p");
+
+        let person=document.createElement("p")
+        let personCount=document.createElement("p");
+        
+        let plus = document.createElement("button");
+        let minus = document.createElement("button");
+
+        let remove = document.createElement("button");
+        let buy = document.createElement("button");
+
+        img.setAttribute("src",item.image);
+
+        place.innerText=item.location;
+        tagLine.innerText=item.tagline
+
+
+        price.innerText="price/person ="+item.price;
+        trip_total.innerText="trip cost = Rs "+item.tripPrice+"/-";
+        price.innerText="per person = Rs "+item.price+"/-";
+        person.innerText="person ";
+        personCount.innerText=item.person
+
+        remove.innerText="remove";
+        remove.addEventListener("click",()=>{removeCart(item.id)});
+
+
+        buy.innerText="Buy"
+
+        plus.innerText="+";
+        minus.innerText="-";
+
+
+
+
+        plus.addEventListener("click",function(){
+            item.person++;
+          item.tripPrice=item.price*item.person;
+            localStorage.setItem("cartData",JSON.stringify(cartArr));
+            displayCart(cartArr)
         })
 
-        div1.append(img,place,price,btn);
-        container.append(div1)
 
-    })
 
+
+        minus.addEventListener("click",function(){
+            if(item.person!=1){
+                item.person--;
+             item.tripPrice=item.price*item.person;
+            localStorage.setItem("cartData",JSON.stringify(cartArr));          
+            displayCart(cartArr)
+            }
+        })
+
+      let  divPrice=document.createElement("div");
+      divPrice.className="divPrice"
+
+   let divMerge=document.createElement("div");
+   divMerge.className="cartMerge";
+
+   let divButtons=document.createElement("div");
+   divButtons.className="divButtons";
+
+   let divPerson=document.createElement("div");
+   divPerson.className="divPerson";
+
+   let divPersonOutter=document.createElement("div");
+   divPersonOutter.className="divPersonOutter";
+
+   let divSection1=document.createElement("div");
+   divSection1.className="divSection1"
+
+   let divSection2=document.createElement("div");
+   divSection2.className="divSection2";
+
+   let divSection3=document.createElement("div");
+   divSection3.className="divSection3"
+
+
+
+//---------------section 1---------------
+    
+     divSection1.append(place,tagLine);
+
+//---------------section 2---------------
+
+
+
+
+divPrice.append(price,trip_total)
+divPerson.append(plus,personCount,minus)
+
+divPersonOutter.append(person,divPerson)
+//div2.append(divPerson,divButtons)
+
+divSection2.append(divPrice,divPersonOutter)
+
+//----------------section 3---------------
+
+divButtons.append(buy,remove)
+divSection3.append(divButtons);
+
+
+div1.append(img);
+div2.append(divSection1,divSection2,divSection3);
+         
+         
+
+
+        divMerge.append(div1,div2);
+        cart.append(divMerge)
+
+        totalTrip=totalTrip+(+(item.tripPrice));
+         total.innerHTML="Total Package = Rs "+totalTrip+"/-";
+
+         gstValue=((8*totalTrip)/100);
+         GST.innerText="GST = Rs "+gstValue+"/-"
+
+         totalGstValue=+totalTrip+gstValue;
+         totalGST.innerText="Total = Rs "+Math.floor(totalGstValue)+"/-";
+
+        })
+ 
+
+    
+   // total.innerHTML="Total ="+data.price;
 
  }
+
+ //let userURL="https://users-mock-api.onrender.com/users"
+
+//  async function removeCart(id){
+//     //console.log(id)
+//   try{
+//     let res = await fetch(`${userURL}/${id}`,{
+//       method:"DELETE",
+//     })
+//     let data = await res.json();
+//     console.log(data);
+    
+//   }
+//   catch(error){
+//     console.log(error);
+//   }
+
+// }
+
+
+
+
+
+
+
+
+/////////////--------old data--------No Use------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // <!-- <h1 class="person"></h1>
+        // <button class="plus">+</button>
+        // <button class="minus">-</button> -->
+        //     let data=[
+
+//         {image:"https://lh5.googleusercontent.com/p/AF1QipNEFfrn1k5JSPmvXRugafk3H9AfA2mXXIQncdnh=w204-h114-n-k-no",
+//         place:"munnar",
+//         price:2500},
+
+//         {image:"https://lh5.googleusercontent.com/p/AF1QipNEhBrVxLTHb4CM3bzMbymPA1ILDadX-9Db93Y=w204-h114-n-k-no",
+//         place:"hyderabad",
+//         price:3500},
+
+//         {
+//         image:"https://lh5.googleusercontent.com/p/AF1QipPA-3HE_FRfS90TjTDbdsCYxqW7Q79TM_u_2VU=w204-h114-n-k-no",
+//         place:"shimla",
+//         price:4500
+//         },
+
+//         {
+//             image:"https://lh3.googleusercontent.com/proxy/57wQ7I1rwHCmNS__E0uqQ9YqERmV2pX4sWBCIvpMgbN-Bux7CgkYtyk-QdyGoSNoSXZGUQZOkg7BOHb7waHweFY6ae8PW1lf4My7ZG2ECVLQ_DDggTDxc8JdzQwrvtop2MS3MkEOlelkg4lpQ1nH00khhtdJbPA=w548-h318-n-k-no",
+//         place:"kodaikanal",
+//         price:4000
+//         }
+        
+// ]
+//     let container=document.querySelector(".container");
+//----------cart local strorage--------------------------------------------
+    // let cardArr=[];
+
+    // let cartLs=localStorage.getItem("cartData");
+
+        
+    //     if(cartLs==null){
+    //     cartArr=[]
+    //     }
+    //     else{
+    //     cartArr=JSON.parse(cartLs);
+    //     }
+
+
+//display demo destination
+//   displayData(data)
+ 
+//  function displayData(data){
+   
+//     data.forEach((item)=>{
+        
+//         let div1=document.createElement("div");
+//         let img=document.createElement("img");
+//         let place=document.createElement("h2");
+//         let price=document.createElement("p");
+//         let btn = document.createElement("button");
+    
+//         img.setAttribute("src",item.image);
+//         place.innerText=item.place;
+//         price.innerText=item.price;
+//         btn.innerText="Add to Cart"
+// //-----add to cart demo---------------
+//         btn.addEventListener("click",function(){
+//             item.person=1
+//             item.tripPrice=item.price
+//             cartArr.push(item);
+//             localStorage.setItem("cartData",JSON.stringify(cartArr));
+//             // JSON.stringify("cartData",cardData);
+//             displayCart(cartArr)
+
+//         })
+
+//         div1.append(img,place,price,btn);
+//         container.append(div1)
+
+//     })
+
+
+// }
 //--------------------------------------------
-    let total=document.querySelector(".total");
 //    let person=document.querySelector(".person");
 //     let i=1;
 //     total.innerHTML="Total ="+data.price;
@@ -147,94 +464,5 @@
 //    })
 //------------------------------------
 
-//---------display cart----------------------------
-//let totalTrip=0;
-
-displayCart(cartArr)
-function displayCart(data){
-    cart.innerHTML=""
-    let totalTrip=0;
-    data.forEach((item)=>{
-        
-        let div1=document.createElement("div");
-        let img=document.createElement("img");
-        let place=document.createElement("h2");
-        let price=document.createElement("p");
-        let trip_total=document.createElement("p");
-        let person=document.createElement("p")
-        let plus = document.createElement("button");
-        let minus = document.createElement("button");
-        let remove = document.createElement("button");
-    
-        img.setAttribute("src",item.image);
-        place.innerText=item.place;
-        price.innerText="price/person ="+item.price;
-        trip_total.innerText="trip cost ="+item.tripPrice
-        price.innerText=item.price;
-        person.innerText="person ="+item.person;
-        remove.innerText="remove"
-
-        plus.innerText="+";
-        minus.innerText="-";
-
-        plus.addEventListener("click",function(){
-
-            item.person++;
-            item.
-
-            localStorage.setItem("cartData",JSON.stringify(cartArr));
-            displayCart(cartArr)
-
-            })
-
-
-
-
-            minus.addEventListener("click",function(){
-            if(item.person!=1){
-                item.person--;
-            
-            localStorage.setItem("cartData",JSON.stringify(cartArr));          
-            displayCart(cartArr)
-
-            }
-
-            })
-
-
-
-
-
-
-
-        div1.append(img,place,price,trip_total,person,plus,minus,remove)
-        cart.append(div1);
-
-        totalTrip+=item.tripPrice
-         total.innerHTML="Total ="+totalTrip;
-
- 
-
-    })
-    
-   // total.innerHTML="Total ="+data.price;
-
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
+

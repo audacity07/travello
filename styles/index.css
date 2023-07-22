@@ -8,6 +8,35 @@
   box-sizing: border-box;
 }
 
+/* Profile Section */
+
+.profile {
+  position: fixed;
+  border: 2px solid black;
+  width: 40%;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.img-div {
+  /* border: 1px solid red; */
+  width: 15%;
+  height: 20%;
+}
+
+.profile img {
+  width: 100%;
+  /* height: 100%; */
+  border-radius: 50%;
+}
+/* Profile Section Ends */
+
 /* Nav and Hero Section */
 .hero-section-container{
   background-image: url("../images/LandingPage/hero_image2.jpg");
