@@ -10,7 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./admin.css" />
+    <link rel="stylesheet" href="./styles/admin.css" />
     <title>Admin Panel</title>
   </head>
   <body>
@@ -18,12 +18,12 @@
       <!-- left container -->
       <div class="left-container">
         <div class="logo-container">
-          <img src="./black_logo.png" alt="logo" />
+          <img src="./images/AdminPage/black_logo.png" alt="logo" />
         </div>
 
         <div class="admin-card">
           <div class="admin-image-container">
-            <img src="./admin_avatar.jpg" alt="admin image" />
+            <img src="./images/AdminPage/admin_avatar.jpg" alt="admin image" />
           </div>
           <h4>Travello Admin</h4>
         </div>
@@ -67,13 +67,18 @@
                 style="color: #a8a8a8"
               ></i>
             </div>
-            <input type="text" placeholder="Search user..." />
+            <input
+              type="text"
+              placeholder="Search user..."
+              id="search-user-data"
+            />
           </div>
 
           <!-- actual table -->
           <table>
             <thead class="heading">
               <tr class="head-row">
+                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Password</th>
@@ -81,21 +86,61 @@
                 <th>Delete</th>
               </tr>
             </thead>
-            <tbody class="body-container">
-              <tr class="table-row">
-                <td>testuser1</td>
-                <td>testuser1@gmail.com</td>
-                <td>tu1</td>
-                <td><button class="edit-button">Edit</button></td>
-                <td><button class="delete-button">Delete</button></td>
-              </tr>
-            </tbody>
+            <tbody class="body-container"></tbody>
           </table>
         </div>
       </div>
       <!-- end of right container -->
+
+      <!-- pop up to update user details -->
+      <div class="popup">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+          <h2>Update Details</h2>
+          <div class="form-element">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter name" />
+          </div>
+          <div class="form-element">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter email" />
+          </div>
+          <div class="form-element">
+            <label for="password">Password</label>
+            <input type="text" id="password" placeholder="Enter password" />
+          </div>
+          <div class="form-element">
+            <button class="confirm-btn">Confirm</button>
+          </div>
+        </div>
+      </div>
+      <!-- end of pop up to update user details  -->
+
+      <!-- pop up to add new user -->
+      <div class="popup-new-user">
+        <div class="close-btn">&times;</div>
+        <div class="form">
+          <h2>Create User</h2>
+          <div class="form-element">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter name" />
+          </div>
+          <div class="form-element">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter email" />
+          </div>
+          <div class="form-element">
+            <label for="password">Password</label>
+            <input type="text" id="password" placeholder="Enter password" />
+          </div>
+          <div class="form-element">
+            <button class="confirm-btn">Confirm</button>
+          </div>
+        </div>
+      </div>
+      <!-- end of pop up to add new user -->
     </div>
 
-    <script src="./admin.js"></script>
+    <script src="./scripts/admin.js"></script>
   </body>
 </html>
