@@ -27,6 +27,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f19714', end
                                                
 }
 
+.cart {
+  position: fixed;
+  top: 90%;
+  left: 90%;
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+
+#item-count {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  position: fixed;
+  left: 92.5%;
+  top: 89%;
+  z-index: 3;
+}
+
+.cart img {
+  width: 90%;
+}
+
 /* Add the blurred background using a separate div */
 /* .blurry-background {
   position: absolute;
@@ -43,6 +74,126 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f19714', end
 
 /* end of blur part */
 
+.popup {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 15px;
+  position: fixed;
+  width: 25%;
+  height: 300px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  /* transform: translateY(-50%); */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+
+.dopup {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 15px;
+  position: fixed;
+  width: 25%;
+  height: 300px;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+  /* transform: translateY(-50%); */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+}
+#popup img, #dopup img {
+  width: 30%;
+}
+
+.open-popup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.open-dopup {
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-popup {
+  margin-top: 20px;
+  background: #49e326;
+  background-image: -webkit-linear-gradient(top, #49e326, #287a05);
+  background-image: -moz-linear-gradient(top, #49e326, #287a05);
+  background-image: -ms-linear-gradient(top, #49e326, #287a05);
+  background-image: -o-linear-gradient(top, #49e326, #287a05);
+  background-image: linear-gradient(to bottom, #49e326, #287a05);
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  text-shadow: 2px 1px 0px #666666;
+  -webkit-box-shadow: 3px 9px 7px #666666;
+  -moz-box-shadow: 3px 9px 7px #666666;
+  box-shadow: 3px 9px 7px #666666;
+  font-family: Georgia;
+  color: #fff;
+  font-size: 19px;
+  padding: 11px 29px 10px 29px;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-popup:hover {
+  background: #4ede10;
+  background-image: -webkit-linear-gradient(top, #4ede10, #000000);
+  background-image: -moz-linear-gradient(top, #4ede10, #000000);
+  background-image: -ms-linear-gradient(top, #4ede10, #000000);
+  background-image: -o-linear-gradient(top, #4ede10, #000000);
+  background-image: linear-gradient(to bottom, #4ede10, #000000);
+  text-decoration: none;
+}
+
+.btn-dopup {
+  margin-top: 20px;
+  background: #e32630;
+  background-image: -webkit-linear-gradient(top, #e32630, #9e0e0e);
+  background-image: -moz-linear-gradient(top, #e32630, #9e0e0e);
+  background-image: -ms-linear-gradient(top, #e32630, #9e0e0e);
+  background-image: -o-linear-gradient(top, #e32630, #9e0e0e);
+  background-image: linear-gradient(to bottom, #e32630, #9e0e0e);
+  -webkit-border-radius: 9;
+  -moz-border-radius: 9;
+  border-radius: 9px;
+  text-shadow: 2px 1px 0px #666666;
+  -webkit-box-shadow: 3px 9px 7px #666666;
+  -moz-box-shadow: 3px 9px 7px #666666;
+  box-shadow: 3px 9px 7px #666666;
+  font-family: Georgia;
+  color: #fff;
+  font-size: 19px;
+  padding: 11px 29px 10px 29px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+}
+
+.btn-dopup:hover {
+  background: #ed0c0c;
+  background-image: -webkit-linear-gradient(top, #ed0c0c, #000000);
+  background-image: -moz-linear-gradient(top, #ed0c0c, #000000);
+  background-image: -ms-linear-gradient(top, #ed0c0c, #000000);
+  background-image: -o-linear-gradient(top, #ed0c0c, #000000);
+  background-image: linear-gradient(to bottom, #ed0c0c, #000000);
+  text-decoration: none;
+}
 .hero-section-container nav * {
   width: 80%;
   margin: auto;
@@ -184,6 +335,8 @@ nav {
 
 .form #input {
   background-color: transparent;
+  color: black;
+  font-weight: bold;
 }
 
 .form{
@@ -288,8 +441,7 @@ color: #5fa8d3;
 }
 
 .card-container {
-  border: 1px solid black;
-  width: 90%;
+  width: 95%;
   margin: auto;
   padding: 40px;
   display: grid;
@@ -302,13 +454,15 @@ color: #5fa8d3;
 }
 
 .card {
-  border: 1px solid red;
   width: 90%;
   height: 750px;
-  padding: 10px;
+  padding: 20px 20px 50px 20px;
   margin: auto;
   /* backdrop-filter: blur(5px); */
   /* filter: blur(1px) grayscale(50%); */
+  box-shadow: 2px 2px 29px 8px rgba(0,0,0,0.63);
+-webkit-box-shadow: 2px 2px 29px 8px rgba(0,0,0,0.63);
+-moz-box-shadow: 2px 2px 29px 8px rgba(0,0,0,0.63);
 }
 
 img {
@@ -330,7 +484,35 @@ li:hover {
   border-bottom: 1px solid black; 
 }
 
+.hover-underline-animation {
+  position: relative;
+  color: #FFFFFF;
+  text-decoration: none;
+}
 
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation::after{
+  transform: scaleX(0);
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+}
+
+.hover-underline-animation:hover::after {
+  transform-origin: bottom left;
+}
 
 li::first-letter {
   font-size: 25px;
@@ -369,7 +551,7 @@ input::-webkit-inner-spin-button {
 
 .popular {
   margin: auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   text-decoration: underline;
 }
 
@@ -383,7 +565,7 @@ input::-webkit-inner-spin-button {
 
 
 .price {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: auto;
   padding: 15px;
   width: 15%;
@@ -454,7 +636,7 @@ input::-webkit-inner-spin-button {
   font-size: 20px;
   color: white;
   background-color: black;
-  transition: transform .2s;
+  transition: transform 0.9s;
 }
 
 .btn:hover {

@@ -31,7 +31,7 @@ function displayData(data) {
     data.forEach((ele) => {
         let card = document.createElement("div");
         card.setAttribute("class", "card");
-        let location = document.createElement("h2");
+        let location = document.createElement("h1");
         location.setAttribute("class", "location");
         location.innerText = ele.location;
         let tagline = document.createElement("h3");
@@ -90,27 +90,43 @@ document.querySelector('#desc_btn').addEventListener("click", function() {
     })
 })
 
+let filt = document.querySelector("#filter-btn");
 
-// document.querySelector("#input").addEventListener("input", function(){
-//     temp();
-// })
-
-// function deBounce(func, delay) {
-//     let timer;
-
-//     return function() {
-//         if(timer) {
-//             clearTimeout(timer);
-//         }
-
-//         timer = setTimeout(function() {
-//             func()
-//         }, delay)
-//     }
-// }
+filt.addEventListener("click", function() {
+        let minVal = document.querySelector(".min-price");
+        let maxVal = document.querySelector(".max-price");
+        // `https://travelloproject.onrender.com/destination?price_gte=2000&price_lte=3000`
+        fetch(`https://travelloproject.onrender.com/destination?price_gte=${minVal.value}&price_lte=${maxVal.value}`).then((res) => {
+            return res.json();
+        }).then((data) => {
+            console.log(data);
+            displayData(data);
+        })
+})
 
 
-// let temp = deBounce(getData, 2000)
+let write = document.querySelector("#input");
+
+document.querySelector("#input").addEventListener("input", function(){
+    temp();
+})
+
+function deBounce(func, delay) {
+    let timer;
+
+    return function() {
+        if(timer) {
+            clearTimeout(timer);
+        }
+
+        timer = setTimeout(function() {
+            func(`https://travelloproject.onrender.com/destination?location_like=${write.value}`)
+        }, delay)
+    }
+}
+
+
+let temp = deBounce(getData, 2000)
 
 
 let userUrl = `https://users-mock-api.onrender.com/users`;
@@ -118,29 +134,56 @@ let userUrl = `https://users-mock-api.onrender.com/users`;
 
 let packageData = [];
 let user;
+let itemCount = document.querySelector("#item-count");
 function addToPackage(ele) {
-    // console.log(ele)
-    fetch(`${userUrl}?id=2`).then((res) => {
-        return res.json();
-    }).then((data) => {
-        // console.log(data);
-        user = data;
-        console.log(user)
-    })
-    
+    user = {
+        "packages" : packageData
+    }
+
+    for(let i=0;i<packageData.length;i++) {
+        if(packageData[i].id == ele.id) {
+            openDopup();
+            return;
+        }
+    }
+
     packageData.push(ele);
     console.log(packageData)
-    fetch(`${userUrl}?id=2`, {
+    openPopup();
+    fetch(`${userUrl}/2`, {
         method : "PATCH",
         headers : {
-            "Content-Type" : "application/json"
+          "Content-Type" : "application/json"
         },
         body : JSON.stringify({
             packages : packageData
         })
-    }).then((res) => {
+      }).then((res) => {
         return res.json();
-    }).then((data) => {
+      }).then((data) => {
         console.log(data);
-    })
+      })
+}
+
+let popup = document.querySelector("#popup");
+let dopup = document.querySelector("#dopup");
+function openPopup() {
+    popup.classList.add("open-popup");
+    popup.style.zIndex = "2";
+    itemCount.innerText++;
+    itemCount.style.backgroundColor = "green";
+    itemCount.style.color = "white";
+}
+
+function closePopup() {
+    popup.classList.remove("open-popup");
+}
+
+function openDopup() {
+    dopup.classList.add("open-dopup");
+    dopup.style.zIndex = "2";
+}
+
+function closedopup() {
+    dopup.classList.remove("open-dopup");
 }

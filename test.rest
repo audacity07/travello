@@ -1,2 +1,6 @@
 ###
-GET https://users-mock-api.onrender.com/users
+GET https://travello-login-api.onrender.com/login?id=5
+
+###
+DELETE https://travello-login-api.onrender.com/login?id=5
+
