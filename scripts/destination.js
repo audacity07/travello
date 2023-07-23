@@ -130,14 +130,14 @@ let temp = deBounce(getData, 2000)
 
 
 let userUrl = `https://users-mock-api.onrender.com/users`;
-
+let loginId = localStorage.getItem("loginId")
 
 let packageData = [];
 let user;
 let itemCount = document.querySelector("#item-count");
 function addToPackage(ele) {
     user = {
-        "packages" : packageData
+        "package" : packageData
     }
 
     for(let i=0;i<packageData.length;i++) {
@@ -150,7 +150,7 @@ function addToPackage(ele) {
     packageData.push(ele);
     console.log(packageData)
     openPopup();
-    fetch(`${userUrl}/2`, {
+    fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
         method : "PATCH",
         headers : {
           "Content-Type" : "application/json"
@@ -170,7 +170,7 @@ let dopup = document.querySelector("#dopup");
 function openPopup() {
     popup.classList.add("open-popup");
     popup.style.zIndex = "2";
-    itemCount.innerText++;
+    itemCount.innerText = packageData.length
     itemCount.style.backgroundColor = "green";
     itemCount.style.color = "white";
 }

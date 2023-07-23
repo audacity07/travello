@@ -18,8 +18,18 @@
     <div class="profile">
       <div class="img-div">
         <img src="https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png" alt="">
-        <h2 class="userName">NISHANT SINGH</h2>
-        <h2>nishantk488@gmail.com</h2>
+      </div>
+      <h2 class="userName">NISHANT SINGH</h2>
+      <h2 class="userEmail"></h2>
+      <button id="removePopup" class="btn-okay"><i class="fa-solid fa-xmark fa-lg" style="color: #000000;"></i></button>
+      <button class="btn-edit">EDIT</button>
+      <div class="btn-div">
+        <button id="log-out">
+          <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>LOG OUT
+        </button>
+        <button onclick="deleteAcc()" id="delete-account">
+          <i class="fa-solid fa-trash" style="color: #000000;"></i>DELETE ACCOUNT
+        </button>
       </div>
     </div>
 
@@ -28,15 +38,15 @@
       <!-- nav bar -->
       <nav>
         <div class="card-1">
-          <a href="#">DESTINATION</a>
+          <a href="destination.html">DESTINATION</a>
           <a href="#">ABOUT US</a>
         </div>
         <div class="logo">
           <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
         </div>
         <div class="card-2">
-          <a id="" href="login.html">LOGIN</a>
-          <a id="user-name" href="login.html">SIGN UP</a>
+          <a id="cart-sec" href="login.html">LOGIN</a>
+          <p onclick="goToLogin()" id="user-name" >SIGN UP</p>
         </div>
       </nav>
 
