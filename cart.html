@@ -15,7 +15,7 @@
         }
         .top{
             width: 20%;
-            
+            position: fixed;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -26,7 +26,13 @@
            height: 150px;
            padding-left: 15px;
            padding-right: 15px;
-          
+          right: 10px;
+             border: none;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            border-radius: 20px;
+        }
+        .cartTotal{
+          text-decoration: underline;
         }
         .top div{
             display: flex;
@@ -50,33 +56,81 @@
             grid-template-columns: repeat(1,1fr);
             margin: auto;
             gap: 40px;
+            margin-left: 7%;
             margin-top: 70px;
+            /* position: absolute; */
 
         }
         .cart img{
-            width: 100%;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
+            width: 80%;
+            border-radius: 20px;
+            /* border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px; */
         }
         .cartMerge{
             display: flex;
-            border: 1px solid red;
+            /* border: 1px solid red;
+            border-radius: 15px; */
+            border: none;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
             border-radius: 20px;
         }
+        /* .cartMerge:hover{
+          border: 0.5px solid rgb(67, 49, 67);
+        } */
         .cartMerge>div{
             width: 50%;
         }
         .cartMerge>div img{
-            width: 90%;
+            width: 80%;
         }
         .divButtons{
             display: flex;
             flex-direction: column;
-            /* justify-content: space-evenly; */
+            /* border: 1px solid red; */
+            justify-content: space-evenly; 
+            height: 70px;
         }
+        .divButtons button{
+          height: 25px;
+          font-size: 15px;
+          border-radius: 5px;
+           border: none;  
+        }
+        .buy{
+          width: 50%;
+          color: white;
+          background-color: rgb(27, 27, 69);
+          
+        }
+        .remove{
+          width: 50%;
+       
+          color: white;
+          background-color: rgba(107, 25, 25, 0.888);
+        }
+
         .divPerson{
+          width: 70%;
+          /* border: 1px solid red; */
             display: flex;
-           
+            
+          
+        }
+        .divPerson p{
+          margin-left: 5px;
+          margin-right:5px ;
+        }
+        .divPerson>button{
+          color: white;
+          background-color: #44434b;
+          font-size: 18px;
+          /* padding: 8px; */
+          /* font-family: "DM Sans", sans-serif; */
+          border-radius: 5px;
+          border: none;
+         
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
         }
         .divSection2{
             display: flex;
@@ -93,12 +147,22 @@
         }
         
         .div2{
+        
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
         }
-            
-            
+          /* .divSection3{
+            border: 1 px solid black;
+            height: 70px;
+          }   */
+           .buyTotal{
+          color: white;
+          background-color: rgb(27, 27, 69);
+          border: none;
+          border-radius: 5px;
+          width: 48%;
+           } 
 
 
 
@@ -110,6 +174,7 @@
         <div class="cart"></div>
  
         <div class="top">
+          <h2 class="cartTotal">Cart Total</h2>
             <p class="total"></p>
             <p class="GST">Gst=Rs 1000/-</p>
             <hr>
@@ -129,9 +194,10 @@
         let total=document.querySelector(".total");
         let GST=document.querySelector(".GST");
         let totalGST=document.querySelector(".totalGST");
+        let buyTotal=document.querySelector(".buyTotal");
      
-        
-        let cardArr=[];
+     let buyPackage=[];
+     let cardArr=[];
         let cartLs=localStorage.getItem("cartData");
 
         if(cartLs==null){
@@ -140,52 +206,45 @@
         }
         else{
         cartArr=JSON.parse(cartLs);
-        displayCart(cartArr)
+        //displayCart(cartArr)
         }
+  
+  let api="https://users-mock-api.onrender.com/users"
 
-
-        
-
-//---------display cart----------------------------
-
-let totalTrip=0;
-
-async function getData(){
-    try{
-        let res=await fetch(`https://users-mock-api.onrender.com/users`);
-        let data=await res.json();
-        console.log(data)
+async function getData(url){
+  try{ 
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
 
         data.forEach((item)=>{
-            if(item.id==2){
-                cartArr=item.packages
+            if(item.id===2){
+              buyPackage.push(item.name);
+                console.log("item.packages",item.packages)
+               displayCart(item.packages)
 
-                 cartArr=cartArr.map((item)=>{ 
-                     item.tripPrice=item.price,
-                     item.person=1
-                    return item })
-                console.log(cartArr)
+                cartArr=item.packages
                 localStorage.setItem("cartData",JSON.stringify(cartArr))
-                //console.log(item.packages)
-                displayCart(cartArr)
+               //console.log("cartArr",cartArr);
+              // displayCart(cartArr);
             }
         })
-    }
-    catch(err){
-        console.log(err);
-    }
+
+  }
+  catch(error){
+    console.log(error);
+  }
 }
+getData(api)
 
-//getData();
 
-//console.log(cartArr)
-
+let totalBuyOut=0;
 function displayCart(data){
     cart.innerHTML=""
     let totalTrip=0;
     let gstValue=0;
     let totalGstValue=0;
-    data.forEach((item)=>{
+    data.forEach((item,i)=>{
         
         let div1=document.createElement("div");
         let div2=document.createElement("div");
@@ -221,22 +280,52 @@ function displayCart(data){
         personCount.innerText=item.person
 
         remove.innerText="remove";
-        remove.addEventListener("click",()=>{removeCart(item.id)});
+        remove.className="remove"
+        //remove.addEventListener("click",()=>{removeCart(item.id)});
+
+        remove.addEventListener("click",function(){
+
+         cartArr=data.filter(function(e,j){
+        return j!=i
+        })
+        localStorage.setItem("cartData",JSON.stringify(cartArr));
+        displayCart(cartArr)
+        removeButton();
+
+        })
 
 
-        buy.innerText="Buy"
+        buy.innerText="Buy";
+        buy.className="buy"
+
+        buy.addEventListener("click",function(){
+            buyPackage.push(item.tripPrice);
+            console.log(buyPackage)
+            // buyButton();
+            // displayCart(cartArr)
+        })
+
+
+
+
+
 
         plus.innerText="+";
+       
         minus.innerText="-";
 
 
 
 
         plus.addEventListener("click",function(){
+            console.log(item)
+           
             item.person++;
           item.tripPrice=item.price*item.person;
             localStorage.setItem("cartData",JSON.stringify(cartArr));
-            displayCart(cartArr)
+           displayCart(cartArr)
+            plusButton();
+             //getData(api)
         })
 
 
@@ -248,6 +337,9 @@ function displayCart(data){
              item.tripPrice=item.price*item.person;
             localStorage.setItem("cartData",JSON.stringify(cartArr));          
             displayCart(cartArr)
+
+            minusButton();
+            //getData(api)
             }
         })
 
@@ -316,17 +408,231 @@ div2.append(divSection1,divSection2,divSection3);
          GST.innerText="GST = Rs "+gstValue+"/-"
 
          totalGstValue=+totalTrip+gstValue;
+         totalBuyOut=Math.floor(totalGstValue)
          totalGST.innerText="Total = Rs "+Math.floor(totalGstValue)+"/-";
 
         })
  
 
+    }
     
-   // total.innerHTML="Total ="+data.price;
 
- }
+    async function plusButton(){
+  try{
+       
+    // packages=cardArr;
 
- //let userURL="https://users-mock-api.onrender.com/users"
+    let res = await fetch(`${api}/${2}`,{
+      method:"PATCH",
+      body:JSON.stringify({
+        packages:cartArr
+      }),
+      headers:{
+        "Content-type":"application/json"
+      }
+    });
+
+    let data = await res.json();
+    console.log(data);
+    //Data(api);
+    displayCart(cartArr)
+    //getData(api);
+  }
+  catch(error){
+    console.log(error);
+    
+  }
+}
+
+
+async function minusButton(){
+  try{
+
+    
+
+    let res = await fetch(`${api}/${2}`,{
+      method:"PATCH",
+      body:JSON.stringify({
+        packages:cartArr
+      }),
+      headers:{
+        "Content-type":"application/json"
+      }
+    });
+
+    let data = await res.json();
+    console.log(data);
+    //Data(api);
+   // getData(api)
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+
+async function removeButton(){
+  try{
+
+    let res = await fetch(`${api}/${2}`,{
+      method:"PATCH",
+      body:JSON.stringify({
+        packages:cartArr
+      }),
+      headers:{
+        "Content-type":"application/json"
+      }
+    });
+
+    let data = await res.json();
+    console.log(data);
+    //Data(api);
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+
+async function buyButton(){
+  try{
+
+    let res = await fetch(`${api}/${2}`,{
+      method:"PATCH",
+      body:JSON.stringify({
+        boughtPackages:buyPackage
+      }),
+      headers:{
+        "Content-type":"application/json"
+      }
+    });
+
+    let data = await res.json();
+    console.log(data);
+    //Data(api);
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+buyTotal.addEventListener("click",function(){
+            buyPackage.push(totalBuyOut);
+            console.log(buyPackage)
+            buyTotalButton();
+            displayCart(cartArr)
+        })
+
+
+
+
+async function buyTotalButton(){
+  try{
+
+    let res = await fetch(`${api}/${2}`,{
+      method:"PATCH",
+      body:JSON.stringify({
+        boughtPackages:buyPackage
+      }),
+      headers:{
+        "Content-type":"application/json"
+      }
+    });
+
+    let data = await res.json();
+    console.log(data);
+    //Data(api);
+  }
+  catch(error){
+    console.log(error);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////--------old data--------No Use------------------------------------------
+      
+        // let cardArr=[];
+        // let cartLs=localStorage.getItem("cartData");
+
+        // if(cartLs==null){
+        // cartArr=[]
+        // // getData()
+        // }
+        // else{
+        // cartArr=JSON.parse(cartLs);
+        // displayCart(cartArr)
+        // }
+
+
+        
+
+//---------display cart----------------------------
+
+//let totalTrip=0;
+
+// async function getData(){
+//     try{
+//         let res=await fetch(`https://users-mock-api.onrender.com/users`);
+//         let data=await res.json();
+//         console.log(data)
+
+//         data.forEach((item)=>{
+//             if(item.id==2){
+//                 cartArr=item.packages
+
+//                  cartArr=cartArr.map((item)=>{ 
+//                      item.tripPrice=item.price,
+//                      item.person=1
+//                     return item })
+//                 console.log(cartArr)
+//                 localStorage.setItem("cartData",JSON.stringify(cartArr))
+//                 //console.log(item.packages)
+//                 displayCart(cartArr)
+//             }
+//         })
+//     }
+//     catch(err){
+//         console.log(err);
+//     }
+// }
+
+//getData();
+
+//console.log(cartArr)
+
+
+
+
+
+
+
+
+
+
+//let userURL="https://users-mock-api.onrender.com/users"
 
 //  async function removeCart(id){
 //     //console.log(id)
@@ -343,27 +649,6 @@ div2.append(divSection1,divSection2,divSection3);
 //   }
 
 // }
-
-
-
-
-
-
-
-
-/////////////--------old data--------No Use------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
