@@ -46,7 +46,7 @@ document.querySelector("#sign-up").addEventListener("click", function() {
     }).then((data) => {
         // console.log(data)
         if(data.length==0) {
-            console.log("nodata")
+            console.log("No data found, Creating new user...")
             fetch(newUserData, {
                     method : "POST",
                     headers : {
@@ -62,19 +62,22 @@ document.querySelector("#sign-up").addEventListener("click", function() {
                 return res.json();
             }).then((data) => {
                 console.log(data);
+                // localStorage.removeItem("userId");
+                // localStorage.setItem("userId", JSON.stringify(data.id));
             })
-                container.classList.toggle("right-panel-active");
-                overlayBtn.classList.remove("btnScaled");
-                window.requestAnimationFrame( ()=>{
+            container.classList.toggle("right-panel-active");
+            overlayBtn.classList.remove("btnScaled");
+            window.requestAnimationFrame( ()=>{
                 overlayBtn.classList.add("btnScaled");
-                })
+            })
+
         }
         for(let i=0;i<data.length;i++) {
             if(data[i].email == upEmail.value) {
-                console.log("unable to post")
+                alert("Same email id found")
             }
             else {
-                console.log("posting")
+                console.log("Creating new account...")
                 fetch(newUserData, {
                     method : "POST",
                     headers : {
@@ -90,6 +93,8 @@ document.querySelector("#sign-up").addEventListener("click", function() {
                     return res.json();
                 }).then((data) => {
                     console.log(data);
+                    // localStorage.removeItem("userId");
+                    // localStorage.setItem("userId", JSON.stringify(data.id));
                 })
                 
                 container.classList.toggle("right-panel-active");
@@ -158,11 +163,13 @@ document.querySelector("#sign-in").addEventListener("click", function() {
         if(dataNew.length == 0) {
             // console.log("no dta found");
             alert("No any account found in our database");
-            return
+            return;
         }
         for(let i=0;i<dataNew.length;i++) {
             if(dataNew[i].email == inEmail.value && dataNew[i].password == inPass.value) {
-                // console.log(dataNew);
+                console.log("Found a user with same credentials, redirecting to landing page...");
+                localStorage.removeItem("userId");
+                localStorage.setItem("userId", JSON.stringify(dataNew[i].id))
                 fetch(`https://travello-login-api.onrender.com/login`, {
                     method : "POST",
                     headers : {
@@ -177,10 +184,12 @@ document.querySelector("#sign-in").addEventListener("click", function() {
                 }).then((res) => {
                     return res.json();
                 }).then((data) => {
-                    // console.log(data)
+                    console.log(data)
+                    localStorage.removeItem("loginId");
+                    localStorage.setItem("loginId", JSON.stringify(data.id));
                     location.href = "index.html"
                 })
-                return
+                return;
             }
             if(dataNew[i].email == inEmail.value) {
                 // console.log("wrong pass");
@@ -200,3 +209,23 @@ document.querySelector("#sign-in").addEventListener("click", function() {
 
 
 // ********** SIGN IN SCRIPT ENDS HERE
+
+// ********** ADDITIONAL 
+
+let flag = true;
+function slideRight() {
+    if(flag) {
+        document.querySelector("#up-in").innerText = "SIGN IN";
+        flag = false;
+    }
+    else {
+        document.querySelector("#up-in").innerText = "SIGN UP";
+        flag = true;
+    }
+
+    container.classList.toggle("right-panel-active");
+    overlayBtn.classList.remove("btnScaled");
+    window.requestAnimationFrame( ()=>{
+        overlayBtn.classList.add("btnScaled");
+    })
+}

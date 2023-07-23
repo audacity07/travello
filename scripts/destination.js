@@ -146,10 +146,14 @@ let temp = deBounce(getData, 2000);
 
 let userUrl = `https://users-mock-api.onrender.com/users`;
 
+
+let loginId = localStorage.getItem("loginId")
+
 let packageData = [];
 let user;
 let itemCount = document.querySelector("#item-count");
 function addToPackage(ele) {
+
   user = {
     packages: packageData,
   };
@@ -179,16 +183,52 @@ function addToPackage(ele) {
     .then((data) => {
       console.log(data);
     });
+
+    user = {
+        "package" : packageData
+    }
+
+    for(let i=0;i<packageData.length;i++) {
+        if(packageData[i].id == ele.id) {
+            openDopup();
+            return;
+        }
+    }
+
+    packageData.push(ele);
+    console.log(packageData)
+    openPopup();
+    fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
+        method : "PATCH",
+        headers : {
+          "Content-Type" : "application/json"
+        },
+        body : JSON.stringify({
+            packages : packageData
+        })
+      }).then((res) => {
+        return res.json();
+      }).then((data) => {
+        console.log(data);
+      })
 }
 
 let popup = document.querySelector("#popup");
 let dopup = document.querySelector("#dopup");
 function openPopup() {
+
   popup.classList.add("open-popup");
   popup.style.zIndex = "2";
   itemCount.innerText++;
   itemCount.style.backgroundColor = "green";
   itemCount.style.color = "white";
+
+    popup.classList.add("open-popup");
+    popup.style.zIndex = "2";
+    itemCount.innerText = packageData.length
+    itemCount.style.backgroundColor = "green";
+    itemCount.style.color = "white";
+
 }
 
 function closePopup() {
