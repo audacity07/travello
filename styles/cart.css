@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'); 
+
+* {
+  /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* nav bar */
+.hero-section-container {
+  background-color: #151515;
+  color: white;
+  margin-bottom: 70px;
+}
+
+.hero-section-container nav * {
+  width: 80%;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.card-1 {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo > img {
+  width: 100px;
+  height: 100px;
+}
+
+.card-2 {
+  display: flex;
+}
+
+.hero-section-container nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.hero-section-container .title-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: Darker Grotesque, sans-serif;
+}
+
+.hero-section-container .title-container h1 {
+  font-size: 300px;
+}
+
+.hero-section-container .title-container h4 {
+  font-size: 50px;
+}
+/* end of nav bar */
+
+/* grand total card */
+.top {
+  width: 75%;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.top div:nth-child(1) {
+  padding-left: 5%;
+  width: 42%;
+}
+
+.top .cartTotal {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 30px;
+  color: #151515;
+  text-decoration: underline;
+}
+
+.top .total, .GST {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+  color: gray;
+}
+
+.top div:nth-child(2) {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.top .totalGST {
+  color: white;
+  background-color: #151515;
+  font-size: 18px;
+  padding: 10px;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 15px;
+}
+
+.top .buyTotal {
+  color: #4a5568;
+  background-color: #edf2f7;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 8px;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+/* end of grand total card */
+
+/* cart items */
+.cart {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.cartMerge {
+  display: flex;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  gap: 20px;
+  align-items: center;
+}
+
+.div1 {
+  width: 40%;
+}
+
+.div1 img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+}
+
+.divSection1 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.divSection1 h2 {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 30px;
+}
+
+.divSection1 p {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  gap: 7px;
+  font-size: 18px;
+  color: gray;
+}
+
+.divSection2 {
+  display: flex;
+  font-family: "DM Sans", sans-serif;
+  gap: 10%;
+}
+
+.divSection2 .divPrice {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.divSection2 .divPersonOutter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 18px;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 13px;
+}
+
+.divSection2 .divPersonOutter .divPerson {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.divSection2 .divPersonOutter .divPerson button {
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #4a5568;
+  cursor: pointer;
+  background-color: #edf2f7;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.divSection3 .divButtons{
+  display: flex;
+  justify-content: space-around;
+}
+
+.divSection3 .divButtons button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  margin: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.divSection3 .divButtons .buy {
+  /* background-color: #8E8B82; */
+  background-color: #343434;
+  padding: 0 5%;
+}
+
+.divSection3 .divButtons .remove {
+  /* background-color: #343434; */
+  background-color: #8E8B82;
+;
+}
+
+/* end of cart items */
+
+/* footer container */
+.footer-outer-black-container {
+  background-color: #151515;
+  color: white;
+  padding-top: 100px;
+  font-family: "Darker Grotesque", sans-serif;
+  margin-top: 50px;
+}
+
+.footer-outer-black-container .footer-inner-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  gap: 25%;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  font-size: 20px;
+}
+
+#footer-input::placeholder {
+  font-size: 20px;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 h3 {
+  font-size: 100px;
+}
+
+.footer-outer-black-container .footer-inner-container .card-1 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-outer-black-container
+  .footer-inner-container
+  .card-1
+  > div
+  > div {
+  border-bottom: 1px solid rgb(151, 148, 148);
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-arrow-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-outer-black-container
+  .footer-inner-container
+  .card-1
+  > div
+  input {
+  border: none;
+  outline: none;
+  background-color: #151515;
+  padding: 13px 0;
+  color: white;
+  width: 80%;
+  font-family: inherit;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 > div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  gap: 15%;
+}
+
+.footer-outer-black-container
+  .footer-inner-container
+  .card-2
+  > div
+  p:nth-child(2) {
+  text-align: right;
+}
+
+.footer-outer-black-container .footer-inner-container .card-2 > h4 {
+  font-size: 40px;
+}
+
+.footer-outer-black-container
+  .footer-inner-container
+  .card-2
+  > h4
+  > span {
+  color: rgb(180, 178, 178);
+}
+
+footer {
+  padding-top: 50px;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+footer .copyright {
+  font-size: 20px;
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .copyright p i {
+  font-size: 15px;
+}
+footer .social-media {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  font-size: 20px;
+}
+/* end of footer container */
