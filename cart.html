@@ -209,7 +209,11 @@
         //displayCart(cartArr)
         }
   
-  let api="https://users-mock-api.onrender.com/users"
+
+        let loginId = localStorage.getItem("loginId")     
+  //let api="https://users-mock-api.onrender.com/users";
+  let api=`https://travello-login-api.onrender.com/login`
+
 
 async function getData(url){
   try{ 
@@ -218,24 +222,27 @@ async function getData(url){
         console.log(data);
 
         data.forEach((item)=>{
-            if(item.id===2){
+          // console.log(loginId)
+          // if(data[0].id===loginId){
+               console.log("getdata")
+              
               buyPackage.push(item.name);
                 console.log("item.packages",item.packages)
                displayCart(item.packages)
 
                 cartArr=item.packages
                 localStorage.setItem("cartData",JSON.stringify(cartArr))
-               //console.log("cartArr",cartArr);
-              // displayCart(cartArr);
-            }
-        })
+               console.log("cartArr",cartArr);
+              displayCart(cartArr);
+            //}
+       })
 
   }
   catch(error){
     console.log(error);
   }
 }
-getData(api)
+getData(`${api}`)
 
 
 let totalBuyOut=0;
@@ -301,6 +308,7 @@ function displayCart(data){
         buy.addEventListener("click",function(){
             buyPackage.push(item.tripPrice);
             console.log(buyPackage)
+            window.location.href="checkout.html"
             // buyButton();
             // displayCart(cartArr)
         })
@@ -401,6 +409,10 @@ div2.append(divSection1,divSection2,divSection3);
         divMerge.append(div1,div2);
         cart.append(divMerge)
 
+
+
+
+
         totalTrip=totalTrip+(+(item.tripPrice));
          total.innerHTML="Total Package = Rs "+totalTrip+"/-";
 
@@ -422,7 +434,7 @@ div2.append(divSection1,divSection2,divSection3);
        
     // packages=cardArr;
 
-    let res = await fetch(`${api}/${2}`,{
+    let res = await fetch(`${api}/${loginId}`,{
       method:"PATCH",
       body:JSON.stringify({
         packages:cartArr
@@ -450,7 +462,7 @@ async function minusButton(){
 
     
 
-    let res = await fetch(`${api}/${2}`,{
+    let res = await fetch(`${api}/${loginId}`,{
       method:"PATCH",
       body:JSON.stringify({
         packages:cartArr
@@ -474,7 +486,7 @@ async function minusButton(){
 async function removeButton(){
   try{
 
-    let res = await fetch(`${api}/${2}`,{
+    let res = await fetch(`${api}/${loginId}`,{
       method:"PATCH",
       body:JSON.stringify({
         packages:cartArr
@@ -497,7 +509,7 @@ async function removeButton(){
 async function buyButton(){
   try{
 
-    let res = await fetch(`${api}/${2}`,{
+    let res = await fetch(`${api}/${loginId}`,{
       method:"PATCH",
       body:JSON.stringify({
         boughtPackages:buyPackage
@@ -521,6 +533,7 @@ buyTotal.addEventListener("click",function(){
             console.log(buyPackage)
             buyTotalButton();
             displayCart(cartArr)
+            window.location.href="checkout.html"
         })
 
 
@@ -529,7 +542,7 @@ buyTotal.addEventListener("click",function(){
 async function buyTotalButton(){
   try{
 
-    let res = await fetch(`${api}/${2}`,{
+    let res = await fetch(`${api}/${loginId}`,{
       method:"PATCH",
       body:JSON.stringify({
         boughtPackages:buyPackage

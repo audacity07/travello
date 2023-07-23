@@ -152,11 +152,8 @@ let loginId = localStorage.getItem("loginId")
 let packageData = [];
 let user;
 let itemCount = document.querySelector("#item-count");
-function addToPackage(ele) {
 
-  user = {
-    packages: packageData,
-  };
+function addToPackage(ele) {
 
   for (let i = 0; i < packageData.length; i++) {
     if (packageData[i].id == ele.id) {
@@ -164,11 +161,18 @@ function addToPackage(ele) {
       return;
     }
   }
-
   packageData.push(ele);
   console.log(packageData);
+  // user = {
+  //   packages: packageData,
+  // };
+
+
+  // packageData.push(ele);
+  // console.log(packageData);
+  //userUrl=https://travello-login-api.onrender.com/login
   openPopup();
-  fetch(`${userUrl}/2`, {
+  fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -184,33 +188,33 @@ function addToPackage(ele) {
       console.log(data);
     });
 
-    user = {
-        "package" : packageData
-    }
+    // user = {
+    //     "package" : packageData
+    // }
 
-    for(let i=0;i<packageData.length;i++) {
-        if(packageData[i].id == ele.id) {
-            openDopup();
-            return;
-        }
-    }
+    // for(let i=0;i<packageData.length;i++) {
+    //     if(packageData[i].id == ele.id) {
+    //         openDopup();
+    //         return;
+    //     }
+    // }
 
-    packageData.push(ele);
-    console.log(packageData)
-    openPopup();
-    fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
-        method : "PATCH",
-        headers : {
-          "Content-Type" : "application/json"
-        },
-        body : JSON.stringify({
-            packages : packageData
-        })
-      }).then((res) => {
-        return res.json();
-      }).then((data) => {
-        console.log(data);
-      })
+    // packageData.push(ele);
+    // console.log(packageData)
+    // openPopup();
+    // fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
+    //     method : "PATCH",
+    //     headers : {
+    //       "Content-Type" : "application/json"
+    //     },
+    //     body : JSON.stringify({
+    //         packages : packageData
+    //     })
+    //   }).then((res) => {
+    //     return res.json();
+    //   }).then((data) => {
+    //     console.log(data);
+    //   })
 }
 
 let popup = document.querySelector("#popup");
@@ -223,11 +227,11 @@ function openPopup() {
   itemCount.style.backgroundColor = "green";
   itemCount.style.color = "white";
 
-    popup.classList.add("open-popup");
-    popup.style.zIndex = "2";
-    itemCount.innerText = packageData.length
-    itemCount.style.backgroundColor = "green";
-    itemCount.style.color = "white";
+    // popup.classList.add("open-popup");
+    // popup.style.zIndex = "2";
+    // itemCount.innerText = packageData.length
+    // itemCount.style.backgroundColor = "green";
+    // itemCount.style.color = "white";
 
 }
 
