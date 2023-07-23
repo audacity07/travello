@@ -61,12 +61,99 @@ document
 
 // Initial display
 displayReview(currentReviewIndex);
-
-fetch(`https://travello-login-api.onrender.com/login`).then((res) => {
+let userData;
+let user_name;
+let space;
+let userId = localStorage.getItem("userId");
+console.log(userId)
+let loginId = localStorage.getItem("loginId");
+console.log(loginId)
+fetch(`https://travello-login-api.onrender.com/login/${loginId}`).then((res) => {
   return res.json();
 }).then((data) => {
   console.log(data);
-  if(data.length > 0) {
-    document.querySelector("#user-name").innerText = `HI ${(data[0].name).toUpperCase()}`;
-  }
+  userData = data;
+  // if(data.length > 0) {
+    space = userData.name.indexOf(" ");
+    if(space == -1) {
+      user_name = userData.name;
+    }
+    else {
+      user_name = userData["name"].slice(0, space);
+    }
+    document.querySelector("#user-name").innerText = `HI ${(user_name).toUpperCase()}`;
+    // console.log("userData.name", userData.name);
+    document.querySelector("#user-name").removeAttribute("onclick")
+    document.querySelector("#user-name").addEventListener("click", openPopup);
+    document.querySelector("#cart-sec").innerText = "MY CART";
+    document.querySelector("#cart-sec").removeAttribute("href")
+    document.querySelector("#cart-sec").addEventListener("click", function() {
+      window.location.href = "cart.html";
+    });
+  // }
 })
+
+
+// NISHANT JS ************************
+
+
+
+let popup = document.querySelector(".profile");
+
+function openPopup() {
+  popup.classList.add("profile-popup");
+  popup.style.zIndex = "3";
+  document.querySelector(".userName").innerText = userData.name;
+  document.querySelector(".userEmail").innerText = userData.email;
+}
+
+document.querySelector("#removePopup").addEventListener("click", function() {
+  popup.classList.remove("profile-popup");
+  popup.style.zIndex = "-1";
+})
+
+document.querySelector("#log-out").addEventListener("click", function() {
+  console.log(userData.id)
+  fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
+    method : "DELETE"
+  }).then((res) => {
+    return res.json();
+  }).then((data) => {
+    console.log(data);
+  })
+  setTimeout(function() {
+    window.location.reload();
+  }, 1000);
+})
+
+let redirectSignUp = document.querySelector("#user-name");
+
+function goToLogin() {
+  window.location.href = "login.html"
+}
+
+function deleteAcc() {
+  fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
+    method : "DELETE"
+  }).then((res) => {
+    return res.json();
+  }).then((data) => {
+    console.log(data);
+  })
+  
+
+  fetch(`https://users-mock-api.onrender.com/users/${userId}`, {
+    method : "DELETE"
+  }).then((res) => {
+    return res.json();
+  }).then((data) => {
+    console.log(data);
+  })
+
+  setTimeout(function() {
+    window.location.reload();
+  }, 1000);
+}
+
+
+// NISHANT JS ENDS HERE *************************

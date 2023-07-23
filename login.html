@@ -16,6 +16,31 @@
     <link rel="stylesheet" href="./styles/login.css">
 </head>
 <body>
+
+    <!-- Nav and Hero Section -->
+    <div class="hero-section-container">
+        <!-- nav bar -->
+        <nav>
+          <div class="card-1">
+            <a href="index.html">HOME</a>
+            <a href="destination.html">DESTINATION</a>
+          </div>
+          <div class="logo">
+            <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
+          </div>
+          <div class="card-2">
+            <a href="about.html">ABOUT US</a>
+            <p id="up-in" onclick="slideRight()">SIGN UP</p>
+          </div>
+        </nav>
+        <!-- end of nav bar -->
+  
+        <!-- Add the blurred background element -->
+        <!-- <div class="blurry-background"></div> -->
+      </div>
+      <!-- end of Nav and Hero Section -->
+
+
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             
@@ -107,6 +132,66 @@
         </div>
     </div>
 
+    <!-- footer container -->
+    <div class="footer-outer-black-container">
+        <div class="footer-inner-container">
+          <div class="card-1">
+            <h3>Travello</h3>
+            <div>
+              <p>Subscribe to our newsletter</p>
+              <div>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  id="footer-input"
+                />
+                <div class="right-arrow-footer">
+                  <i class="fa-solid fa-arrow-right" style="color: #ffffff"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card-2">
+            <h4>
+              We team up with ambitious global brands.
+              <span>Let's stay in touch</span>
+            </h4>
+            <div>
+              <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
+              <p>(239) 555-0108 hello@travello.com</p>
+            </div>
+          </div>
+        </div>
+  
+        <footer>
+          <div class="logo">
+            <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
+          </div>
+          <div class="copyright">
+            <p>
+              All right reserved
+              <i class="fa-regular fa-copyright" style="color: #808080"></i> 2023
+              Travello
+            </p>
+          </div>
+          <div class="social-media">
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa-brands fa-facebook-f" style="color: #ffffff"></i>
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank">
+              <i class="fa-brands fa-linkedin-in" style="color: #ffffff"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+              <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
+            </a>
+          </div>
+        </footer>
+      </div>
+      <!-- end of footer container -->
 </body>
 </html>
 <script src="./scripts/login.js"></script>

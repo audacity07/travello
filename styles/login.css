@@ -21,14 +21,17 @@ body{
     height: 100vh;
     background: #f6f5f7;
     /* background: #151515; */
-    display: grid;
-    place-content: center;
+    /* display: grid; */
+    /* place-content: center; */
     font-family: 'Darker Grotesque', sans-serif;
 }
 .container{
     position: relative;
     width: 850px;
     height: 500px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #fff;
     box-shadow: 25px 30px 55px #5557;
     border-radius: 13px;
@@ -247,14 +250,220 @@ p {
 }
 
 
-/************* Day 6 responsivnes work **************/
 
-@media screen (min-width:451px) and (max-width:750px) {
+
+/* Nav and Hero Section */
+
+/* .hero-section-container{
+    background-image: url("../images/LandingPage/hero_image2.jpg");
+    background-repeat: no-repeat;
+    height: 800px;
+    color: white;
+    background-image: cover;
+    background-position: 50% 50%;
+  } */
+  
+  /* blur part */
+  /* .hero-section-container {
+    position: relative;
+    height: 800px;
+    color: white;
+  } */
+  
+  /* Add the blurred background using a separate div */
+  /* .blurry-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/LandingPage/hero_image2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(1px) grayscale(50%);
+    z-index: -1;
+  } */
+  
+  /* end of blur part */
+  .hero-section-container {
+    background-color: teal;
+    /* ADD Theme color here Ajeet */
+  }
+
+  .hero-section-container nav * {
+    width: 80%;
+    margin: auto;
+  }
+  
+  #up-in {
+    cursor: pointer;
+  }
+
+  nav p, nav a{
+    font-weight:bold;
+    font-size: 18px;
+  }
+
+  nav {
+    display: flex;
+    font-family: Darker Grotesque, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-weight:bold;
     
-}
+    /* margin-top: 10px; */
+  }
+  
+  .card-1 {
+    display: flex;
+  }
+  
+  .logo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  
+  .logo > img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .card-2 {
+    display: flex;
+  }
+  
+  .hero-section-container nav a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .hero-section-container .title-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-family: Darker Grotesque, sans-serif;
+  }
+  
+  .hero-section-container .title-container h1 {
+    font-size: 300px;
+  }
+  
+  .hero-section-container .title-container h4 {
+    font-size: 50px;
+  }
+  
+  /* end of Nav and Hero Section */
 
+/* footer container */
+.footer-outer-black-container {
+    background-color: #151515;
+    color: white;
+    padding-top: 100px;
+    font-family: Darker Grotesque, sans-serif;
+  }
+  
+  .footer-outer-black-container .footer-inner-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    gap: 25%;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-1 {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    font-size: 20px;
+  }
+  
+  #footer-input::placeholder {
+    font-size: 20px;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-1 h3 {
+    font-size: 100px;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-1 > div{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-1 > div > div {
+    border-bottom: 1px solid rgb(151, 148, 148);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .right-arrow-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-1 > div input{
+    border: none;
+    outline: none;
+    background-color: #151515;
+    padding: 13px 0;
+    color: white;
+    width: 80%;
+    font-family: inherit;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-2 > div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    gap: 15%;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-2 > div p:nth-child(2){
+    text-align: right;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-2 > h4 {
+    font-size: 40px;
+  }
+  
+  .footer-outer-black-container .footer-inner-container .card-2 > h4 > span {
+    color: rgb(180, 178, 178);
+  }
+  
+  footer {
+    padding-top: 50px;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+  }
+  
+  footer .copyright {
+    font-size: 20px;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  footer .copyright p i {
+    font-size: 15px;
+  }
+  footer .social-media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    font-size: 20px;
+  }
+  /* end of footer container */
 
-
-@media screen (min-width:0px) and (max-width:450px) {
-    
-}
