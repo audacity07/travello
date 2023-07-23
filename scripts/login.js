@@ -166,7 +166,14 @@ document.querySelector("#sign-in").addEventListener("click", function() {
             return;
         }
         for(let i=0;i<dataNew.length;i++) {
-            if(dataNew[i].email == inEmail.value && dataNew[i].password == inPass.value) {
+            if(dataNew[i].email == "admin@gmail.com" && dataNew[i].password == "admin") {
+                showLoading();
+                setTimeout(function() {
+                    window.location.href = "admin.html";
+                    return;
+                }, 2000)
+            }
+            else if(dataNew[i].email == inEmail.value && dataNew[i].password == inPass.value) {
                 console.log("Found a user with same credentials, redirecting to landing page...");
                 localStorage.removeItem("userId");
                 localStorage.setItem("userId", JSON.stringify(dataNew[i].id))
@@ -187,11 +194,15 @@ document.querySelector("#sign-in").addEventListener("click", function() {
                     console.log(data)
                     localStorage.removeItem("loginId");
                     localStorage.setItem("loginId", JSON.stringify(data.id));
-                    location.href = "index.html"
+                    showLoading();
+                    setTimeout(function() {
+                        window.location.href = "index.html";
+                        return;
+                    }, 2000)
                 })
                 return;
             }
-            if(dataNew[i].email == inEmail.value) {
+            else if(dataNew[i].email == inEmail.value) {
                 // console.log("wrong pass");
                 alert("Wrong Password");
                 return;
@@ -229,3 +240,17 @@ function slideRight() {
         overlayBtn.classList.add("btnScaled");
     })
 }
+
+// JS NISHANT
+
+let loader = document.querySelector(".custom-loader");
+
+function showLoading() {
+    loader.style.zIndex = 1;
+    document.querySelector(".hero-section-container").style.filter = "blur(8px)";
+    document.querySelector("#container").style.filter = "blur(8px)";
+    document.querySelector("#footer-outer-black-containery").style.filter = "blur(8px)";
+}
+
+
+// JS NISHANT ENDS HERE
