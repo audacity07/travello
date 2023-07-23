@@ -48,7 +48,7 @@ let card_number_input = document.querySelector(".card-number-input")
 
     form.addEventListener("submit",(e)=>{
         e.preventDefault()
-        if(card_number_input.value.length < 14){
+        if(card_number_input.value.length < 16 || card_number_input.value.length > 16){
             alert("Please fill correct card number")
         }
         else if(card_holder_input.value===""){
@@ -60,11 +60,11 @@ let card_number_input = document.querySelector(".card-number-input")
         else if (year_input.value===""){
             alert("Please fill expiry year")
         }
-        else if (cvv_input.value.length < 4){
+        else if (cvv_input.value.length < 3){
             alert("Please fill correct cvv number")
         }
         else {
             alert("Your payment is succesfully done!");
         }
-        // alert("Your payment is succesfully done!")
+      
     })
