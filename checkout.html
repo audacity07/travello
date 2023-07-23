@@ -16,7 +16,7 @@
                     <img src="images/Checkoutpage/chip.png" alt="">
                     <img src="images/Checkoutpage/visa.png" alt="">
                 </div>
-                <div class="card-number-box">##############</div>
+                <div id="card-number-box" class="card-number-box">##############</div>
                 <div class="flexbox">
                     <div class="box">
                         <span>Card holder</span>
@@ -45,7 +45,7 @@
         <form id="form">
             <div class="inputBox">
                 <span >Card Number</span>
-                <input required type="text" maxlength="16" class="card-number-input" >
+                <input required type="number" maxlength="16" class="card-number-input" >
             </div>
             <div class="inputBox">
                 <span>Card Holder</span>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="inputBox">
                     <span>CVV</span>
-                    <input required type="text" maxlength="4" class="cvv-input">
+                    <input required type="number" maxlength="3" class="cvv-input">
                 </div>
             </div>
             <input type="submit" value="Submit" id="submit-btn" class="submit-btn">

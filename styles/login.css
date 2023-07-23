@@ -245,3 +245,16 @@ p {
         width: 143.67px;
     }
 }
+
+
+/************* Day 6 responsivnes work **************/
+
+@media screen (min-width:451px) and (max-width:750px) {
+    
+}
+
+
+
+@media screen (min-width:0px) and (max-width:450px) {
+    
+}
