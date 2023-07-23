@@ -107,6 +107,7 @@ body {
   top: 2.5%;
   right: 2.5%;
   height: 95vh;
+  overflow: auto;
 }
 
 .right-container .info-new-user-button {
@@ -158,6 +159,7 @@ body {
 }
 
 /* actual table */
+
 .user-table table .heading .head-row{
   background-color: #F4F6F8;
 }
@@ -371,3 +373,23 @@ body {
 }
 /* end of repeated pop code for new user */
 /* ------------- */
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 18px;
+  gap: 3%;
+}
+
+.pagination button {
+  font: inherit;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #637381;
+  background-color: #EDEFF1;
+}

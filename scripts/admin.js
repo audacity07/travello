@@ -1,14 +1,41 @@
+let table = document.querySelector("table");
 let tableBody = document.querySelector(".body-container");
 let userData = [];
 let baseUrl = `https://users-mock-api.onrender.com/users`;
 
-async function fetchUsersData(val) {
+// async function fetchUsersData(val) {
+//   try {
+//     let url = baseUrl;
+//     if (val) {
+//       url += `?name_like=${val}`;
+//     }
+//     let response = await fetch(url);
+//     let data = await response.json();
+//     console.log(data);
+//     if (data[0].id === 1) {
+//       displayUsersData(data.slice(1, data.length));
+//     } else {
+//       displayUsersData(data);
+//     }
+
+//     // console.log(data.slice(1, data.length));
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+async function fetchUsersData(pageNumber = 1, search = null) {
   try {
     let url = baseUrl;
-    if (val) {
-      url += `?name_like=${val}`;
+    url += `?_page=${pageNumber || 1}&_limit=6`;
+    if (search) {
+      url += `&name_like=${search}`;
     }
     let response = await fetch(url);
+    let totalData = response.headers.get("X-Total-Count");
+    let limit = 6;
+    let totalPages = Math.ceil(totalData / limit);
+
     let data = await response.json();
     console.log(data);
     if (data[0].id === 1) {
@@ -16,7 +43,7 @@ async function fetchUsersData(val) {
     } else {
       displayUsersData(data);
     }
-
+    createButtons(totalPages);
     // console.log(data.slice(1, data.length));
   } catch (error) {
     console.log(error);
@@ -57,10 +84,25 @@ function displayUsersData(data) {
   });
 }
 
+let pagination = document.querySelector(".pagination");
+function createButtons(total) {
+  pagination.innerHTML = null;
+  for (let i = 1; i <= total; i++) {
+    let button = document.createElement("button");
+    button.classList.add("pagination-button");
+    button.setAttribute("data-page-number", i);
+    button.innerText = i;
+    button.addEventListener("click", function () {
+      fetchUsersData(i);
+    });
+    pagination.append(button);
+  }
+}
+
 // search functionality
 let searchTag = document.querySelector("#search-user-data");
 searchTag.addEventListener("input", function () {
-  fetchUsersData(searchTag.value);
+  fetchUsersData(1, searchTag.value);
 });
 
 // pop up to update user details
