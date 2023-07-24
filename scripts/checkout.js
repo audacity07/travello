@@ -88,7 +88,7 @@ form.addEventListener("submit", (e) => {
     setTimeout(() => {
       pay.classList.add("payment-success-popup");
       pay.zIndex = "4";
-      let sec = 10;
+      let sec = 5;
       let timer = document.querySelector("#timer");
       setInterval(function () {
         timer.innerText = `You Will be Redirected to Home Page in ${sec}`;
