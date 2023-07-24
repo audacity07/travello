@@ -18,17 +18,40 @@
       <a href="card.html"><img src="../wonderful-sound-2096/images/DestinationPage/cart2.png" alt="Cart image"></i></a>
     </div>
 
+    <div id="Aopup" class="Aopup">
+      <lord-icon
+        src="https://cdn.lordicon.com/medpcfcy.json"
+        trigger="loop"
+        delay="500"
+        colors="primary:#121331"
+        state="hover-2"
+        style="width:100px;height:100px">
+      </lord-icon>
+      <h2 id="noLogin">Secure your cart by logging in. Add products after you've signed in.</h2>
+      <button class="btn-Aopup" onclick="closeAopup()">OK</button>
+    </div>
+
     <div id="popup" class="popup">
-      <img src="../wonderful-sound-2096/images/DestinationPage/tick-33848.png" alt="">
-      <h2>Package added to Cart</h2>
-      <a href="card.html"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: black;"></i></a>
+      <lord-icon
+        src="https://cdn.lordicon.com/cllunfud.json"
+        trigger="loop"
+        delay="500"
+        colors="outline:#121331,primary:#646e78,secondary:#ebe6ef"
+        style="width:100px;height:100px">
+      </lord-icon>
+      <h2>Great choice! Your selection has been added to your cart.</h2>
       <button class="btn-popup" onclick="closePopup()">OK</button>
     </div>
 
     <div id="dopup" class="dopup">
-      <img src="../wonderful-sound-2096/images/DestinationPage/thinking.png" alt="">
-      <h3>It seems that this Package is already in your cart</h3>
-      <a href="card.html"><i class="fa-solid fa-cart-shopping fa-2xl" style="color: black;"></i></a>
+      <lord-icon
+        src="https://cdn.lordicon.com/bmnlikjh.json"
+        trigger="loop"
+        delay="500"
+        colors="primary:#121331"
+        style="width:100px;height:100px">
+      </lord-icon>
+      <h2>Double-check your cart – the product is already in there.</h2>
       <button class="btn-dopup" onclick="closedopup()">OK</button>
     </div>
 
@@ -36,17 +59,30 @@
     <!-- nav bar -->
     <nav>
       <div class="card-1">
-        <a class="hover-underline-animation" href="#">DESTINATION</a>
-        <a class="hover-underline-animation" href="#">ABOUT US</a>
+        <a href="index.html">HOME</a>
+        <a href="#">ABOUT US</a>
       </div>
       <div class="logo">
         <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
       </div>
       <div class="card-2">
-        <a class="hover-underline-animation" href="index.html">HOME</a>
-        <a class="hover-underline-animation" href="cart.html">MY CART</a>
+        <a href="cart.html">MY CART</a>
+        <a href="index.html">MY PROFILE</a>
+      </div>
+      <div class="hamburger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
       </div>
     </nav>
+    <!-- mobile navbar -->
+    <nav class="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="destination.html">Destination</a>
+      <a href="#">About Us</a>
+    </nav>
+    <!-- end of mobile navbar -->
     <!-- nav bar ends -->
   </div>
 
@@ -66,10 +102,10 @@
       </div>
       
       <div class="form">
-        <input id="input" type="text" name="name" autocomplete="off" required>
-        <label for="name" class="label-name">
+        <input id="input" type="text" name="name" autocomplete="off" placeholder="Search Places" required>
+        <!-- <label for="name" class="label-name">
             <span class="content-name">Search for Desired Place here</span>
-        </label>
+        </label> -->
       </div>
       
       
@@ -88,7 +124,7 @@
 
   <div class="card-container">
     <div class="custom-loader"></div>
-    <h2>Change your attitude by changing latitudes</h2>
+    <h2 id="slogan">Change your attitude by changing latitudes</h2>
   </div>
 
   <!-- Card container ends -->
@@ -159,3 +195,4 @@
 </html>
 
 <script src="scripts/destination.js"></script>
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>

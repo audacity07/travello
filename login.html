@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login || Sign up form</title>
     <link
       rel="stylesheet"
@@ -12,188 +12,192 @@
       referrerpolicy="no-referrer"
     />
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-
-    <link rel="stylesheet" href="./styles/login.css">
-</head>
-<body>
-
-  <div class="custom-loader"></div>
-
+    <link rel="stylesheet" href="./styles/login.css" />
+  </head>
+  <body>
+    <div class="custom-loader"></div>
     <!-- Nav and Hero Section -->
     <div class="hero-section-container">
-        <!-- nav bar -->
-        <nav>
-          <div class="card-1">
-            <a href="index.html">HOME</a>
-            <a href="destination.html">DESTINATION</a>
-          </div>
-          <div class="logo">
-            <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
-          </div>
-          <div class="card-2">
-            <a href="about.html">ABOUT US</a>
-            <p id="up-in" onclick="slideRight()">SIGN UP</p>
-          </div>
-        </nav>
-        <!-- end of nav bar -->
-  
-        <!-- Add the blurred background element -->
-        <!-- <div class="blurry-background"></div> -->
-      </div>
-      <!-- end of Nav and Hero Section -->
-
-
-    <div class="container" id="container">
-        <div class="form-container sign-up-container">
-            
-            <form action="#">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <!-- <a href="#" class="social"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
-                    <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" class="social"><i class="fa fa-twitter"></i></a> -->
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <i class="fa-brands fa-facebook-f" style="color: #151515"></i>
-                      </a>
-                      <a href="https://in.linkedin.com/" target="_blank">
-                        <i class="fa-brands fa-linkedin-in" style="color: #151515"></i>
-                      </a>
-                      <a href="https://www.instagram.com/" target="_blank">
-                        <i class="fa-brands fa-instagram" style="color: #151515"></i>
-                      </a>
-                      <a href="https://twitter.com/" target="_blank">
-                        <i class="fa-brands fa-twitter" style="color: #151515"></i>
-                      </a>
-                </div>
-                <span>or use your email for registration</span>
-                <div class="infield">
-                    <input type="text" placeholder="Name" id="upName" />
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input id="upEmail" type="email" placeholder="Email" name="email" />
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input id="upPassword" class="length" type="password" placeholder="Password"  />
-                    <label></label>
-                </div>
-                <button id="sign-up">Sign up</button>
-            </form>
+      <!-- nav bar -->
+      <nav>
+        <div class="card-1">
+          <a href="index.html">HOME</a>
+          <a href="destination.html">DESTINATION</a>
         </div>
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h1>Sign in</h1>
-                <div class="social-container">
-                    <!-- <a href="#" class="social"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
-                    <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
-                    <a href="#" class="social"><i class="fa fa-twitter"></i></a> -->
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <i class="fa-brands fa-facebook-f" style="color: #151515"></i>
-                      </a>
-                      <a href="https://in.linkedin.com/" target="_blank">
-                        <i class="fa-brands fa-linkedin-in" style="color: #151515"></i>
-                      </a>
-                      <a href="https://www.instagram.com/" target="_blank">
-                        <i class="fa-brands fa-instagram" style="color: #151515"></i>
-                      </a>
-                      <a href="https://twitter.com/" target="_blank">
-                        <i class="fa-brands fa-twitter" style="color: #151515"></i>
-                      </a>
-                </div>
-                <span>or use your account</span>
-                <div class="infield">
-                    <input id="inEmail" type="email" placeholder="Email" name="email" />
-                    <label></label>
-                </div>
-                <div class="infield">
-                    <input id="inPassword" class="length" type="password" placeholder="Password"  />
-                    <label></label>
-                </div>
-                <a href="#" class="forgot">Forgot your password?</a>
-                <button id="sign-in">Sign in</button>
-            </form>
+        <div class="logo">
+          <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
         </div>
-        <div class="overlay-container" id="overlayCon">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button>Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello Friend!</h1>
-                    <p>Enter your personal details and start your journey with us</p>
-                    <button>Sign Up </button>
-                </div>
+        <div class="card-2">
+          <a href="about.html">ABOUT US</a>
+          <p id="up-in" onclick="slideRight()">SIGN UP</p>
+        </div>
+      </nav>
+      <!-- end of nav bar -->
 
-            </div>
-            <button id="overlayBtn"></button>
-        </div>
+      <!-- Add the blurred background element -->
+      <!-- <div class="blurry-background"></div> -->
     </div>
-
+    <!-- end of Nav and Hero Section -->
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+        <form action="#">
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <!-- <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="social"><i class="fa fa-twitter"></i></a> -->
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa-brands fa-facebook-f" style="color: #151515"></i>
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank">
+              <i class="fa-brands fa-linkedin-in" style="color: #151515"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa-brands fa-instagram" style="color: #151515"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+              <i class="fa-brands fa-twitter" style="color: #151515"></i>
+            </a>
+          </div>
+          <span>or use your email for registration</span>
+          <div class="infield">
+            <input type="text" placeholder="Name" id="upName" />
+            <label></label>
+          </div>
+          <div class="infield">
+            <input id="upEmail" type="email" placeholder="Email" name="email" />
+            <label></label>
+          </div>
+          <div class="infield">
+            <input
+              id="upPassword"
+              class="length"
+              type="password"
+              placeholder="Password"
+            />
+            <label></label>
+          </div>
+          <button id="sign-up">Sign up</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="#">
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <!-- <a href="#" class="social"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="social"><i class="fa fa-google-plus"></i></a>
+                    <a href="#" class="social"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="social"><i class="fa fa-twitter"></i></a> -->
+            <a href="https://www.facebook.com/" target="_blank">
+              <i class="fa-brands fa-facebook-f" style="color: #151515"></i>
+            </a>
+            <a href="https://in.linkedin.com/" target="_blank">
+              <i class="fa-brands fa-linkedin-in" style="color: #151515"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <i class="fa-brands fa-instagram" style="color: #151515"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+              <i class="fa-brands fa-twitter" style="color: #151515"></i>
+            </a>
+          </div>
+          <span>or use your account</span>
+          <div class="infield">
+            <input id="inEmail" type="email" placeholder="Email" name="email" />
+            <label></label>
+          </div>
+          <div class="infield">
+            <input
+              id="inPassword"
+              class="length"
+              type="password"
+              placeholder="Password"
+            />
+            <label></label>
+          </div>
+          <a href="#" class="forgot">Forgot your password?</a>
+          <button id="sign-in">Sign in</button>
+        </form>
+      </div>
+      <div class="overlay-container" id="overlayCon">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button>Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello Friend!</h1>
+            <p>Enter your personal details and start your journey with us</p>
+            <button>Sign Up</button>
+          </div>
+        </div>
+        <button id="overlayBtn"></button>
+      </div>
+    </div>
     <!-- footer container -->
     <div class="footer-outer-black-container">
-        <div class="footer-inner-container">
-          <div class="card-1">
-            <h3>Travello</h3>
+      <div class="footer-inner-container">
+        <div class="card-1">
+          <h3>Travello</h3>
+          <div>
+            <p>Subscribe to our newsletter</p>
             <div>
-              <p>Subscribe to our newsletter</p>
-              <div>
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  id="footer-input"
-                />
-                <div class="right-arrow-footer">
-                  <i class="fa-solid fa-arrow-right" style="color: #ffffff"></i>
-                </div>
+              <input
+                type="email"
+                placeholder="your@email.com"
+                id="footer-input"
+              />
+              <div class="right-arrow-footer">
+                <i class="fa-solid fa-arrow-right" style="color: #ffffff"></i>
               </div>
             </div>
           </div>
-  
-          <div class="card-2">
-            <h4>
-              We team up with ambitious global brands.
-              <span>Let's stay in touch</span>
-            </h4>
-            <div>
-              <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
-              <p>(239) 555-0108 hello@travello.com</p>
-            </div>
+        </div>
+
+        <div class="card-2">
+          <h4>
+            We team up with ambitious global brands.
+            <span>Let's stay in touch</span>
+          </h4>
+          <div>
+            <p>2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
+            <p>(239) 555-0108 hello@travello.com</p>
           </div>
         </div>
-  
-        <footer>
-          <div class="logo">
-            <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
-          </div>
-          <div class="copyright">
-            <p>
-              All right reserved
-              <i class="fa-regular fa-copyright" style="color: #808080"></i> 2023
-              Travello
-            </p>
-          </div>
-          <div class="social-media">
-            <a href="https://www.facebook.com/" target="_blank">
-              <i class="fa-brands fa-facebook-f" style="color: #ffffff"></i>
-            </a>
-            <a href="https://in.linkedin.com/" target="_blank">
-              <i class="fa-brands fa-linkedin-in" style="color: #ffffff"></i>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-              <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank">
-              <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
-            </a>
-          </div>
-        </footer>
       </div>
-      <!-- end of footer container -->
-</body>
+
+      <footer>
+        <div class="logo">
+          <img src="./images/LandingPage/logo_with_name.png" alt="logo" />
+        </div>
+        <div class="copyright">
+          <p>
+            All right reserved
+            <i class="fa-regular fa-copyright" style="color: #808080"></i> 2023
+            Travello
+          </p>
+        </div>
+        <div class="social-media">
+          <a href="https://www.facebook.com/" target="_blank">
+            <i class="fa-brands fa-facebook-f" style="color: #ffffff"></i>
+          </a>
+          <a href="https://in.linkedin.com/" target="_blank">
+            <i class="fa-brands fa-linkedin-in" style="color: #ffffff"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fa-brands fa-instagram" style="color: #ffffff"></i>
+          </a>
+          <a href="https://twitter.com/" target="_blank">
+            <i class="fa-brands fa-twitter" style="color: #ffffff"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+    <!-- end of footer container -->
+  </body>
 </html>
 <script src="./scripts/login.js"></script>

@@ -1,72 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700;800&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'); 
-
 * {
   /* border: 1px solid red; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 /* nav bar */
 .hero-section-container {
   background-color: #151515;
   color: white;
   margin-bottom: 70px;
 }
-
 .hero-section-container nav * {
-  width: 80%;
+  /* width: 80%; */
   margin: auto;
 }
-
 nav {
   display: flex;
   font-family: "Darker Grotesque", sans-serif;
   font-size: 20px;
   text-align: center;
 }
-
 .card-1 {
   display: flex;
 }
-
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .logo > img {
   width: 100px;
   height: 100px;
 }
-
 .card-2 {
   display: flex;
 }
-
 .hero-section-container nav a {
   text-decoration: none;
   color: inherit;
 }
-
 .hero-section-container .title-container {
   width: 80%;
   margin: auto;
   text-align: center;
   font-family: Darker Grotesque, sans-serif;
 }
-
 .hero-section-container .title-container h1 {
   font-size: 300px;
 }
-
 .hero-section-container .title-container h4 {
   font-size: 50px;
 }
 /* end of nav bar */
-
 /* grand total card */
 .top {
   width: 75%;
@@ -78,32 +65,28 @@ nav {
   margin-bottom: 50px;
   padding: 10px;
 }
-
 .top div:nth-child(1) {
   padding-left: 5%;
   width: 42%;
 }
-
 .top .cartTotal {
   font-family: "Darker Grotesque", sans-serif;
   font-size: 30px;
   color: #151515;
   text-decoration: underline;
 }
-
 .top .total, .GST {
   font-family: "Darker Grotesque", sans-serif;
   font-size: 23px;
   font-weight: bold;
   color: gray;
 }
-
 .top div:nth-child(2) {
   width: 50%;
   display: flex;
   justify-content: space-around;
+  
 }
-
 .top .totalGST {
   color: white;
   background-color: #151515;
@@ -112,7 +95,6 @@ nav {
   font-family: "DM Sans", sans-serif;
   border-radius: 15px;
 }
-
 .top .buyTotal {
   color: #4a5568;
   background-color: #edf2f7;
@@ -126,7 +108,6 @@ nav {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 /* end of grand total card */
-
 /* cart items */
 .cart {
   width: 70%;
@@ -136,7 +117,6 @@ nav {
   gap: 30px;
   margin-bottom: 80px;
 }
-
 .cartMerge {
   display: flex;
   border-radius: 20px;
@@ -144,35 +124,29 @@ nav {
   gap: 20px;
   align-items: center;
 }
-
 .div1 {
   width: 40%;
 }
-
 .div1 img {
   width: 100%;
   height: 100%;
   border-radius: 20px;
 }
-
 .div2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 70%;
 }
-
 .divSection1 {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-
 .divSection1 h2 {
   font-family: "Darker Grotesque", sans-serif;
   font-size: 30px;
 }
-
 .divSection1 p {
   font-family: "DM Sans", sans-serif;
   display: flex;
@@ -180,20 +154,17 @@ nav {
   font-size: 18px;
   color: gray;
 }
-
 .divSection2 {
   display: flex;
   font-family: "DM Sans", sans-serif;
   gap: 10%;
 }
-
 .divSection2 .divPrice {
   font-family: "DM Sans", sans-serif;
   font-size: 16px;
   font-weight: 500;
   border-radius: 20px;
 }
-
 .divSection2 .divPersonOutter {
   display: flex;
   gap: 10px;
@@ -203,14 +174,12 @@ nav {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 13px;
 }
-
 .divSection2 .divPersonOutter .divPerson {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
-
 .divSection2 .divPersonOutter .divPerson button {
   border: none;
   outline: none;
@@ -223,12 +192,10 @@ nav {
   background-color: #edf2f7;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-
 .divSection3 .divButtons{
   display: flex;
   justify-content: space-around;
 }
-
 .divSection3 .divButtons button {
   border: none;
   outline: none;
@@ -240,21 +207,17 @@ nav {
   margin: 15px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-
 .divSection3 .divButtons .buy {
   /* background-color: #8E8B82; */
   background-color: #343434;
   padding: 0 5%;
 }
-
 .divSection3 .divButtons .remove {
   /* background-color: #343434; */
   background-color: #8E8B82;
 ;
 }
-
 /* end of cart items */
-
 /* footer container */
 .footer-outer-black-container {
   background-color: #151515;
@@ -263,7 +226,6 @@ nav {
   font-family: "Darker Grotesque", sans-serif;
   margin-top: 50px;
 }
-
 .footer-outer-black-container .footer-inner-container {
   width: 80%;
   display: flex;
@@ -271,28 +233,23 @@ nav {
   margin: auto;
   gap: 25%;
 }
-
 .footer-outer-black-container .footer-inner-container .card-1 {
   display: flex;
   flex-direction: column;
   width: 28%;
   font-size: 20px;
 }
-
 #footer-input::placeholder {
   font-size: 20px;
 }
-
 .footer-outer-black-container .footer-inner-container .card-1 h3 {
   font-size: 100px;
 }
-
 .footer-outer-black-container .footer-inner-container .card-1 > div {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-
 .footer-outer-black-container
   .footer-inner-container
   .card-1
@@ -302,13 +259,11 @@ nav {
   display: flex;
   justify-content: space-between;
 }
-
 .right-arrow-footer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .footer-outer-black-container
   .footer-inner-container
   .card-1
@@ -322,20 +277,17 @@ nav {
   width: 80%;
   font-family: inherit;
 }
-
 .footer-outer-black-container .footer-inner-container .card-2 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .footer-outer-black-container .footer-inner-container .card-2 > div {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
   gap: 15%;
 }
-
 .footer-outer-black-container
   .footer-inner-container
   .card-2
@@ -343,11 +295,9 @@ nav {
   p:nth-child(2) {
   text-align: right;
 }
-
 .footer-outer-black-container .footer-inner-container .card-2 > h4 {
   font-size: 40px;
 }
-
 .footer-outer-black-container
   .footer-inner-container
   .card-2
@@ -355,7 +305,6 @@ nav {
   > span {
   color: rgb(180, 178, 178);
 }
-
 footer {
   padding-top: 50px;
   display: flex;
@@ -363,7 +312,6 @@ footer {
   margin: auto;
   justify-content: space-between;
 }
-
 footer .copyright {
   font-size: 20px;
   color: gray;
@@ -371,7 +319,6 @@ footer .copyright {
   justify-content: center;
   align-items: center;
 }
-
 footer .copyright p i {
   font-size: 15px;
 }
@@ -383,3 +330,277 @@ footer .social-media {
   font-size: 20px;
 }
 /* end of footer container */
+/* media queries start  */
+@media all and (min-width : 410px) and (max-width : 820px) {
+  .cart{
+    width: 90%;
+  }
+  .top{
+    display: flex;
+    flex-direction: column;
+  }
+  .top div:nth-child(1) {
+    width: 90%;
+  }
+  .top div:nth-child(2) {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .top .totalGST {
+   padding-left: 15px;
+   opacity: 0.8;
+  }
+  .cartMerge {
+    display: flex;
+    flex-direction: column;
+  }
+  .div1 {
+    width: 100%;
+  }
+  .div1 img {
+   border-bottom-left-radius: 0%;
+   border-bottom-right-radius: 0%;
+  }
+  .cartMerge {
+    gap: 0%;
+  }
+  .div2{
+    margin-top: 0%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   gap: 0px;
+   
+  }
+  
+  .divSection1 ,.divSection2,.divSection3{
+    width: 100%;
+  }
+  .divSection1{
+    padding-left: 5%;
+  }
+  .divSection2{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+  }
+  .divPrice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .divPersonOutter{
+    display: flex;
+    padding-left: 0%;
+    gap: 0%;
+  }
+  .divPersonOutter p{
+    margin-right: 1%;
+    margin-left: 0%;
+  }
+  
+  .divSection2 .divPersonOutter .divPerson {
+    right: 5px;
+    
+  }
+  .divSection3 .divButtons .remove {
+    padding: 0 5%;
+  }
+  .divButtons{
+    padding-top: 0%;
+  }
+  .divButtons button {
+    margin-top: 5px;
+    align-items: start;
+    height: 30px;
+    width: 40%;
+   
+  }
+}
+/* -----ajeeth-- */
+nav .card-1, nav .logo, nav .card-2 {
+  width: 80%;
+}
+nav .card-1, nav .logo, nav .card-2 {
+  width: 80%;
+}
+.hamburger {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  display: none;
+  z-index: 10;
+  /* margin-right: 100px; */
+  padding-right: 20px;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+  background-color: white;
+  width: 30px;
+  height: 4px;
+  border-radius: 10px;
+}
+.animateBar1 {
+  animation: flipBar1 0.4s;
+  /* this is used to hold the last state */
+  /* and not revert bakc to the original state */
+  animation-fill-mode: forwards;
+}
+.animateBar2 {
+  animation: fadeBar2 0.4s;
+  animation-fill-mode: forwards;
+}
+.animateBar3 {
+  animation: flipBar3 0.4s;
+  animation-fill-mode: forwards;
+}
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(3px, 10px);
+  }
+}
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(3px, -10px);
+  }
+}
+.mobileNav {
+  margin-top: 100px;
+  width: 140px;
+  background-color: #151515;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: -160px;
+  /* right: 0; */
+  transition: transform 0.3s;
+}
+.openDrawer {
+  transform: translateX(-150px);
+}
+.mobileNav a {
+  text-decoration: none;
+  color: white;
+  margin: 16px 0;
+  font-size: 21px;
+}
+.mobileNav a:hover {
+  border-bottom: 1px solid white;
+}
+@media only screen and (max-width: 413px) {
+  .hero-section-container {
+      height: 100px;
+    }
+    nav .card-1, .card-2 {
+      display: none;
+    }
+    .logo {
+      padding-left: 50px;
+    }
+    .hamburger {
+      padding-right: 0;
+      display: flex;
+      margin-left: 10px;
+    }
+    .hero-section-container .title-container h1 {
+      margin-top: 20px;
+      font-size: 100px;
+    }
+    
+    .hero-section-container .title-container h4 {
+      margin-top: 50px;
+      font-size: 30px;
+    }
+  /* footer container */
+  .footer-outer-black-container {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-1 {
+    flex-direction: column;
+    width: 100%;
+    font-size: 20px;
+  }
+  #footer-input::placeholder {
+    font-size: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-1 h3 {
+    font-size: 70px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-1 > div input{
+    padding: 10px 0;
+  }
+  .footer-outer-black-container .footer-inner-container .card-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-2 > div {
+    font-size: 15px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-2 > h4 {
+    font-size: 30px;
+  }
+  footer {
+    padding-top: 25px;
+    width: 100%;
+    padding: 0 10px;
+  }
+  footer .logo {
+    padding-left: 0;
+    width: 100px;
+    height: 100px;
+  }
+  footer .logo img {
+    width: 100%;
+  }
+  footer .copyright {
+    font-size: 10px;
+  }
+  footer .copyright p i {
+    font-size: 8px;
+  }
+  footer .social-media {
+    width: 25%;
+    font-size: 18px;
+  }
+  /* end of footer container */
+  }
