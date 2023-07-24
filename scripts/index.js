@@ -180,9 +180,10 @@ function deleteAcc() {
     })
     .then((data) => {
       console.log(data);
+      localStorage.removeItem("userId");
+      localStorage.removeItem("loginId");
     });
-  localStorage.removeItem("userId");
-  localStorage.removeItem("loginId");
+
   setTimeout(function () {
     window.location.reload();
   }, 1000);
