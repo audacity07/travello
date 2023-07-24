@@ -1,12 +1,3 @@
-// fetch(`https://travelloproject.onrender.com/destination`).then((res) => {
-//     return res.json();
-// }).then((data) => {
-//     console.log(data);
-//     setTimeout(function() {
-//         displayData(data);
-//     }, 1000)
-// })
-
 async function getData(url) {
   try {
     let res = await fetch(url);
@@ -142,19 +133,17 @@ function deBounce(func, delay) {
   };
 }
 
-let temp = deBounce(getData, 2000);
+let temp = deBounce(getData, 800);
 
 let userUrl = `https://users-mock-api.onrender.com/users`;
 
-
-let loginId = localStorage.getItem("loginId")
+let loginId = localStorage.getItem("loginId");
 
 let packageData = [];
 let user;
 let itemCount = document.querySelector("#item-count");
 
 function addToPackage(ele) {
-
   for (let i = 0; i < packageData.length; i++) {
     if (packageData[i].id == ele.id) {
       openDopup();
@@ -167,11 +156,10 @@ function addToPackage(ele) {
   //   packages: packageData,
   // };
 
-
   // packageData.push(ele);
   // console.log(packageData);
   //userUrl=https://travello-login-api.onrender.com/login
-  openPopup();
+
   fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
     method: "PATCH",
     headers: {
@@ -186,53 +174,60 @@ function addToPackage(ele) {
     })
     .then((data) => {
       console.log(data);
+      user = data;
+      if (typeof data.id == "undefined") {
+        openAopup();
+        return;
+      }
+      // packageData.push(ele);
+      // console.log(packageData);
+      openPopup();
     });
 
-    // user = {
-    //     "package" : packageData
-    // }
+  // user = {
+  //     "package" : packageData
+  // }
 
-    // for(let i=0;i<packageData.length;i++) {
-    //     if(packageData[i].id == ele.id) {
-    //         openDopup();
-    //         return;
-    //     }
-    // }
+  // for(let i=0;i<packageData.length;i++) {
+  //     if(packageData[i].id == ele.id) {
+  //         openDopup();
+  //         return;
+  //     }
+  // }
 
-    // packageData.push(ele);
-    // console.log(packageData)
-    // openPopup();
-    // fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
-    //     method : "PATCH",
-    //     headers : {
-    //       "Content-Type" : "application/json"
-    //     },
-    //     body : JSON.stringify({
-    //         packages : packageData
-    //     })
-    //   }).then((res) => {
-    //     return res.json();
-    //   }).then((data) => {
-    //     console.log(data);
-    //   })
+  // packageData.push(ele);
+  // console.log(packageData)
+  // openPopup();
+  // fetch(`https://travello-login-api.onrender.com/login/${loginId}`, {
+  //     method : "PATCH",
+  //     headers : {
+  //       "Content-Type" : "application/json"
+  //     },
+  //     body : JSON.stringify({
+  //         packages : packageData
+  //     })
+  //   }).then((res) => {
+  //     return res.json();
+  //   }).then((data) => {
+  //     console.log(data);
+  //   })
 }
 
 let popup = document.querySelector("#popup");
 let dopup = document.querySelector("#dopup");
+let aopop = document.querySelector("#Aopup");
 function openPopup() {
-
   popup.classList.add("open-popup");
   popup.style.zIndex = "2";
   itemCount.innerText++;
   itemCount.style.backgroundColor = "green";
   itemCount.style.color = "white";
 
-    // popup.classList.add("open-popup");
-    // popup.style.zIndex = "2";
-    // itemCount.innerText = packageData.length
-    // itemCount.style.backgroundColor = "green";
-    // itemCount.style.color = "white";
-
+  // popup.classList.add("open-popup");
+  // popup.style.zIndex = "2";
+  // itemCount.innerText = packageData.length
+  // itemCount.style.backgroundColor = "green";
+  // itemCount.style.color = "white";
 }
 
 function closePopup() {
@@ -247,3 +242,26 @@ function openDopup() {
 function closedopup() {
   dopup.classList.remove("open-dopup");
 }
+
+function openAopup() {
+  aopop.classList.add("open-Aopup");
+  aopop.style.zIndex = "2";
+}
+
+function closeAopup() {
+  aopop.classList.remove("open-Aopup");
+}
+
+// to handle mobile navigation
+const hamburger = document.querySelector(".hamburger");
+const bar1 = document.querySelector(".bar1");
+const bar2 = document.querySelector(".bar2");
+const bar3 = document.querySelector(".bar3");
+const mobileNav = document.querySelector(".mobileNav");
+
+hamburger.addEventListener("click", function () {
+  bar1.classList.toggle("animateBar1");
+  bar2.classList.toggle("animateBar2");
+  bar3.classList.toggle("animateBar3");
+  mobileNav.classList.toggle("openDrawer");
+});

@@ -88,6 +88,11 @@ body {
   font-size: 23px;
 }
 
+.admin-options a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .admin-options .destination-card {
   display: flex;
   gap: 30px;

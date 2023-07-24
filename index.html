@@ -14,21 +14,29 @@
     <title>Travello</title>
   </head>
   <body>
-
     <div class="profile">
-      <div class="img-div">
-        <img src="https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png" alt="">
-      </div>
-      <h2 class="userName">NISHANT SINGH</h2>
-      <h2 class="userEmail"></h2>
-      <button id="removePopup" class="btn-okay"><i class="fa-solid fa-xmark fa-lg" style="color: #000000;"></i></button>
-      <button class="btn-edit">EDIT</button>
+      <lord-icon
+        src="https://cdn.lordicon.com/dxjqoygy.json"
+        trigger="click"
+        colors="primary:#121331,secondary:#000000"
+        state="hover-nodding"
+        style="width: 150px; height: 150px"
+      >
+      </lord-icon>
+
+      <h1 class="userName"></h1>
+      <h1 class="userEmail"></h1>
+      <button id="removePopup" class="btn-okay">
+        <i class="fa-solid fa-xmark fa-lg" style="color: white"></i>
+      </button>
+
       <div class="btn-div">
         <button id="log-out">
-          <i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i>LOG OUT
+          <i class="fa-solid fa-right-from-bracket" style="color: white"></i>LOG
+          OUT
         </button>
         <button onclick="deleteAcc()" id="delete-account">
-          <i class="fa-solid fa-trash" style="color: #000000;"></i>DELETE ACCOUNT
+          <i class="fa-solid fa-trash" style="color: white"></i>DELETE ACCOUNT
         </button>
       </div>
     </div>
@@ -46,9 +54,23 @@
         </div>
         <div class="card-2">
           <a id="cart-sec" href="login.html">LOGIN</a>
-          <p onclick="goToLogin()" id="user-name" >SIGN UP</p>
+          <p onclick="goToLogin()" id="user-name">SIGN UP</p>
+        </div>
+        <div class="hamburger">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
         </div>
       </nav>
+
+      <!-- mobile navbar -->
+      <nav class="mobileNav">
+        <a href="login.html">Login</a>
+        <a href="login.html">Sign Up</a>
+        <a href="destination.html">Destination</a>
+        <a href="#">About Us</a>
+      </nav>
+      <!-- end of mobile navbar -->
 
       <div class="title-container">
         <h1>Travello</h1>
@@ -350,5 +372,6 @@
     <!-- end of footer container -->
 
     <script src="./scripts/index.js"></script>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
   </body>
 </html>
