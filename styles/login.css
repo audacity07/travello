@@ -60,7 +60,8 @@ form{
     padding: 0px 50px;
 }
 h1{
-    color: var(--grad-clr1);
+    /* color: var(--grad-clr1); */
+    color: #151515;
 
 }
 .social-container{
@@ -76,7 +77,7 @@ h1{
     height: 40px;
     width: 40px;
 }
-span{
+.container span{
     font-size: 12px;
 }
 .infield{
@@ -98,7 +99,8 @@ label{
     transform: translateX(-50%);
     width: 0%;
     height: 2px;
-    background: var(--linear-grad);
+    /* background: var(--linear-grad); */
+    background: #151515;
     transition: 0.3s;
 }
 input:focus~lable {
@@ -118,7 +120,8 @@ a.forgot{
 button {
     border-radius: 20px;
     border: 1px solid var(--grad-clr1);
-    background: var(--grad-clr2);
+    /* background: var(--grad-clr2); */
+    background: #151515;
     color: #FFF;
     font-size: 12px;
     font-weight: bold;
@@ -132,7 +135,8 @@ button {
 }
 .form-container button:hover {
     background: #FFF;
-    color: var(--grad-clr1);
+    /* color: var(--grad-clr1); */
+    color: #151515;
 }
 .overlay-container{
     position: absolute;
@@ -158,7 +162,8 @@ button {
 }
 .overlay {
     position: relative;
-    background:  var(--linear-grad);
+    /* background:  var(--linear-grad); */
+    background:#151515;
     color: #FFF;
     left: -150%;
     height: 100%;
@@ -190,7 +195,7 @@ button {
     color: #FFF;
 
 }
-p {
+.container p {
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
@@ -293,7 +298,7 @@ p {
   }
 
   .hero-section-container nav * {
-    width: 80%;
+    /* width: 80%; */
     margin: auto;
   }
   
@@ -302,8 +307,8 @@ p {
   }
 
   nav p, nav a{
-    font-weight:bold;
-    font-size: 18px;
+    /* font-weight:bold; */
+    font-size: 20px;
   }
 
   nav {
@@ -311,7 +316,7 @@ p {
     font-family: Darker Grotesque, sans-serif;
     font-size: 20px;
     text-align: center;
-    font-weight:bold;
+    /* font-weight:bold; */
     
     /* margin-top: 10px; */
   }
@@ -374,7 +379,7 @@ p {
     gap: 25%;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-1 {
+  .footer-outer-black-container .footer-inner-container .footer-card-1 {
     display: flex;
     flex-direction: column;
     width: 28%;
@@ -385,17 +390,17 @@ p {
     font-size: 20px;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-1 h3 {
+  .footer-outer-black-container .footer-inner-container .footer-card-1 h3 {
     font-size: 100px;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-1 > div{
+  .footer-outer-black-container .footer-inner-container .footer-card-1 > div{
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-1 > div > div {
+  .footer-outer-black-container .footer-inner-container .footer-card-1 > div > div {
     border-bottom: 1px solid rgb(151, 148, 148);
     display: flex;
     justify-content: space-between;
@@ -407,7 +412,7 @@ p {
     align-items: center;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-1 > div input{
+  .footer-outer-black-container .footer-inner-container .footer-card-1 > div input{
     border: none;
     outline: none;
     background-color: #151515;
@@ -417,28 +422,28 @@ p {
     font-family: inherit;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-2 {
+  .footer-outer-black-container .footer-inner-container .footer-card-2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-2 > div {
+  .footer-outer-black-container .footer-inner-container .footer-card-2 > div {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     gap: 15%;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-2 > div p:nth-child(2){
+  .footer-outer-black-container .footer-inner-container .footer-card-2 > div p:nth-child(2){
     text-align: right;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-2 > h4 {
+  .footer-outer-black-container .footer-inner-container .footer-card-2 > h4 {
     font-size: 40px;
   }
   
-  .footer-outer-black-container .footer-inner-container .card-2 > h4 > span {
+  .footer-outer-black-container .footer-inner-container .footer-card-2 > h4 > span {
     color: rgb(180, 178, 178);
   }
   
@@ -514,3 +519,187 @@ p {
 }
 
 /* Loading ends here */
+
+/* hamburger code */
+nav .card-1, nav .logo, nav .card-2 {
+  width: 80%;
+}
+.hamburger {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  display: none;
+  z-index: 10;
+  /* margin-right: 100px; */
+  padding-right: 20px;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+  background-color: white;
+  width: 30px;
+  height: 4px;
+  border-radius: 10px;
+}
+.animateBar1 {
+  animation: flipBar1 0.4s;
+  /* this is used to hold the last state */
+  /* and not revert bakc to the original state */
+  animation-fill-mode: forwards;
+}
+.animateBar2 {
+  animation: fadeBar2 0.4s;
+  animation-fill-mode: forwards;
+}
+.animateBar3 {
+  animation: flipBar3 0.4s;
+  animation-fill-mode: forwards;
+}
+@keyframes flipBar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(3px, 10px);
+  }
+}
+@keyframes fadeBar2 {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+@keyframes flipBar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(3px, -10px);
+  }
+}
+.mobileNav {
+  margin-top: 100px;
+  width: 140px;
+  background-color: #151515;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: -160px;
+  /* right: 0; */
+  transition: transform 0.3s;
+}
+.openDrawer {
+  transform: translateX(-150px);
+}
+.mobileNav a {
+  text-decoration: none;
+  color: white;
+  margin: 16px 0;
+  font-size: 21px;
+}
+.mobileNav a:hover {
+  border-bottom: 1px solid white;
+}
+
+@media only screen and (max-width: 413px) {
+  .hero-section-container {
+      height: 100px;
+    }
+    nav .card-1, .card-2 {
+      display: none;
+    }
+    .logo {
+      padding-left: 50px;
+    }
+    .hamburger {
+      padding-right: 0;
+      display: flex;
+      margin-left: 10px;
+    }
+    .hero-section-container .title-container h1 {
+      margin-top: 20px;
+      font-size: 100px;
+    }
+    
+    .hero-section-container .title-container h4 {
+      margin-top: 50px;
+      font-size: 30px;
+    }
+  /* footer container */
+  .footer-outer-black-container {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-1 {
+    flex-direction: column;
+    width: 100%;
+    font-size: 20px;
+  }
+  #footer-input::placeholder {
+    font-size: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-1 h3 {
+    font-size: 70px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-1 > div input{
+    padding: 10px 0;
+  }
+  .footer-outer-black-container .footer-inner-container .card-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-2 > div {
+    font-size: 15px;
+  }
+  .footer-outer-black-container .footer-inner-container .card-2 > h4 {
+    font-size: 30px;
+  }
+  footer {
+    padding-top: 25px;
+    width: 100%;
+    padding: 0 10px;
+  }
+  footer .logo {
+    padding-left: 0;
+    width: 100px;
+    height: 100px;
+  }
+  footer .logo img {
+    width: 100%;
+  }
+  footer .copyright {
+    font-size: 10px;
+  }
+  footer .copyright p i {
+    font-size: 8px;
+  }
+  footer .social-media {
+    width: 25%;
+    font-size: 18px;
+  }
+  /* end of footer container */
+  }
+/* end of hamburger code */

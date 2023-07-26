@@ -243,9 +243,9 @@
       buy.addEventListener("click", function () {
         buyPackage.push(item.tripPrice);
         console.log(buyPackage);
-        window.location.href = "checkout.html";
-        // buyButton();
-        // displayCart(cartArr)
+        // window.location.href = "checkout.html";
+        buyButton();
+        displayCart(cartArr);
       });
 
       plus.innerText = "+";
@@ -418,6 +418,7 @@
       let data = await res.json();
       console.log(data);
       //Data(api);
+      window.location.href = "checkout.html";
     } catch (error) {
       console.log(error);
     }
@@ -429,7 +430,6 @@
     console.log(buyPackage);
     buyTotalButton();
     displayCart(cartArr);
-    window.location.href = "checkout.html";
   });
 
   async function buyTotalButton() {
@@ -446,6 +446,7 @@
 
       let data = await res.json();
       console.log(data);
+      window.location.href = "checkout.html";
       //Data(api);
     } catch (error) {
       console.log(error);
