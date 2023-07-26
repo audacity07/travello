@@ -10,9 +10,9 @@ async function getUserData(url) {
     console.log(data);
     data.forEach((item) => {
       console.log(item.boughtPackages);
-      userName.innerText = "Hi " + item.boughtPackages[0];
+      userName.innerText = "Hi, " + item.boughtPackages[0];
       +"..........";
-      userAmount.innerText = "Total =Rs " + item.boughtPackages[1] + "/-";
+      userAmount.innerText = "Total = ₹ " + item.boughtPackages[1] + "💰";
     });
   } catch (error) {
     console.log(error);

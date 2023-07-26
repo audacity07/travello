@@ -12,7 +12,12 @@
     /* background-color: #eee; */
    }
    /* <!-- hemanth change for display user details-------csss-> */
-    .namePrice{
+
+   #display-info {
+    padding: 10px 0;
+    background-color: #EEEEEE;
+   }
+    #namePrice{
             width: 80%;
             display: flex;
             justify-content: space-around;
@@ -73,7 +78,7 @@
    }
    .container form .submit-btn{
        width: 100%;
-       background : linear-gradient(45deg, blueviolet, deeppink);
+       background : linear-gradient(45deg, rgb(70, 67, 67), black);
        margin-top: 20px;
        padding: 10px;
        font-size:  20px;
@@ -99,7 +104,7 @@
        width: 100%;
        top:0;
        left: 0;
-       background: linear-gradient(45deg, blueviolet, deeppink);
+       background: linear-gradient(45deg, rgb(70, 67, 67), black);
        border-radius: 5px;
        backface-visibility: hidden;
        box-shadow: 0 15px 25px rgba(0,0,0,.2);
@@ -140,7 +145,7 @@
        left: 0;
        height: 100%;
        width: 100%;
-       background: linear-gradient(45deg, blueviolet, deeppink);
+       background: linear-gradient(45deg, rgb(70, 67, 67), black);
        border-radius: 5px;
        padding: 20px 0;
        text-align: right;
