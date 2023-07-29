@@ -46,7 +46,7 @@ https://github.com/audacity07/wonderful-sound-2096.git
  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic1.PNG?raw=true" width="946" height="384" />
  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic2.PNG?raw=true" width="942" height="446"/>
  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic3.PNG?raw=true" width="942" height="478"/>
- <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic5.PNG?raw=true" width="942" height="480"/>
+ <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic7.PNG?raw=true" width="942" height="480"/>
  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic6.PNG?raw=true" width="942" height="480"/>
   
 <div/>
