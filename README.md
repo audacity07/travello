@@ -4,7 +4,7 @@
   <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/LandingPage/logo_with_name.png?raw=true" alt="html" width="120" height="120"/>
 </div>
 
-Embark on a journey of a lifetime with Wanderlust World - your go-to travel website equipped with seamless login, signup, search, and filtering functionalities. Discover your dream destination, connect with fellow travelers, and share your experiences within a vibrant community. Let Wanderlust World be your guide to endless adventures and unforgettable memories. Join us now and unleash your wanderlust! 🌍✈️
+Embark on a journey of a lifetime with Travello - your go-to travel website equipped with seamless login, signup, search, and filtering functionalities. Discover your dream destination, connect with fellow travelers, and share your experiences within a vibrant community. Let Travello be your guide to endless adventures and unforgettable memories. Join us now and unleash your wanderlust! 🌍✈️
 
 ## Tech Stacks Used
 
@@ -28,6 +28,7 @@ Embark on a journey of a lifetime with Wanderlust World - your go-to travel webs
 - Login and Sign up functionality
 - Checkout
 - Delete Account functionality
+- Credit/Debit & UPI Payment Functionality
 
 ## Run Locally
 
@@ -47,7 +48,6 @@ https://github.com/audacity07/wonderful-sound-2096.git
  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic3.PNG?raw=true" width="942" height="478"/>
  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic5.PNG?raw=true" width="942" height="480"/>
  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic6.PNG?raw=true" width="942" height="480"/>
-  <img src="https://github.com/audacity07/wonderful-sound-2096/blob/master/images/github%20page/pic4.PNG?raw=true" width="942" height="474"/>
   
 <div/>
 
