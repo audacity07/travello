@@ -16,20 +16,30 @@
    #display-info {
     padding: 10px 0;
     background-color: #EEEEEE;
-   }
-    #namePrice{
-            width: 80%;
+    width: 50%;
+    margin: auto;
+}
+#namePrice{
+        height: 100px;
+        padding: 50px;
+        width: 80%;
             display: flex;
             justify-content: space-around;
             margin-top: 50px;
             margin: auto;
             align-items: center;
             font-family: "Darker Grotesque", sans-serif;
-            border-radius: 20px;
+            border-radius: 5px;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
      /* border: 1px solid red; */
      background-color:white;
      padding: 10px;
+        }
+        .userTotalAmount {
+            background-color: black;
+            color: #fff;
+            padding:  8px 10px 10px 10px;
+            border-radius: 10px;
         }
    /* <!-- hemanth changes end --> */
    .container{
@@ -50,7 +60,7 @@
        padding: 20px;
        padding-top: 160px;
    }
-   
+
    .container form .inputBox{
        margin-top: 20px;
    }
@@ -345,7 +355,7 @@ width: 100%;
 border-top-right-radius: 50px;
 border-top-left-radius: 50px;
 height: 40px;
-background-color: green;
+background-color: #151515;
 display: grid;
 place-items: center;
 }
@@ -361,10 +371,11 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+font-family: "Darker Grotesque", sans-serif;
 gap: 60px;
 }
 .custom-loader {
-position: absolute;
+position: fixed;
 top: 50%;
 left: 50%;
 width: 50px;
@@ -396,3 +407,129 @@ margin:8px;
 @keyframes s6 {
 100%{transform: rotate(1turn)}
 }
+
+
+     .show-total-end{
+        font-family: 'Darker Grotesque', sans-serif;
+        /* background-color: red; */
+         width: 40%;
+         height: auto;
+         /* border: 1px solid  black; */
+         border-radius: 5px;
+         padding: 20px;
+         /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+         /* margin: 20px; */
+         margin: auto;
+         margin-bottom: 30px;
+         box-shadow: 0 15px 25px rgba(0,0,0,.2);
+         background-color: white;
+     }
+     .show-total-mid{
+         display: flex;
+        justify-content: space-between;
+        align-items: center;
+         /* width: 80%; */
+         /* margin-top: 30px; */
+         /* border: 1px solid red; */
+     }
+     .pay-met img {
+        width: 100%;
+     }
+    .show-pay-via{
+     width: 60%;
+     display: flex;
+    
+     justify-content: flex-start;
+    }
+    .show-pay-via p{
+     margin-left: 5px;
+     margin-top: 10px;
+    }
+    .bharath-pay-logo{
+     width: 30%;
+     margin-top: 15px;
+    }
+    .bharath-pay-logo>img{
+     width: 100%;
+    }
+    .upi-id-box>div:nth-child(1){
+     display: flex;
+     flex-direction: column;
+    }
+    .upi-id-box{
+     margin-bottom: 10px;
+    }
+    .pay-password{
+     display: flex;
+     flex-direction: column;
+    }
+    #verify{
+        /* width: 80px; */
+        border: none;
+        padding: 8px 10px 10px 10px;
+        font-weight: bold;
+        font-family: "Darker Grotesque", sans-serif;
+        font-size: 22px;
+        color: white;
+        background-color: #151515;
+        /* color: #4a5568;
+        background-color: #edf2f7; */
+        transition: transform 0.9s;
+        border-radius: 15px 15px 15px 15px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        /* box-shadow: (50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+        /* width: 80%; */
+        /* margin-left: 5%; */
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    input{
+        font: inherit;
+        font-size: 18px;
+        font-weight: 500;
+        width: 100%;
+        /* height: 70%; */
+        color: #595f6e;
+        padding-top: 20px;
+        border: none;
+        outline: none;
+        padding: 15px;
+        border-bottom: 1px solid black;
+    }
+    .pay-password-div{
+     display: none;
+    }
+    body {
+        background-color: #eeeeee;
+    }
+    .upiShow{
+ /* margin-left: 3px;
+ margin-top: -2px; */
+ padding: 10px;
+    }
+    .pay-msg1 {
+       text-align: center;
+       padding: 20px;
+    }
+    .pay-done, .pay-cancel {
+        border: none;
+        padding: 8px 16px 10px 16px;
+        font-weight: bold;
+        font-family: "Darker Grotesque", sans-serif;
+        font-size: 22px;
+        color: white;
+        background-color: #151515;
+        /* color: #4a5568;
+        background-color: #edf2f7; */
+        transition: transform 0.9s;
+        border-radius: 15px 15px 15px 15px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+        /* box-shadow: (50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+        /* width: 80%; */
+        /* margin-left: 5%; */
+        margin-top: 10px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+    }

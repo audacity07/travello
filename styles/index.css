@@ -679,25 +679,42 @@ footer .social-media {
 .profile {
   position: fixed;
   /* border: 2px solid black; */
-  width: 400px;
+  width: 600px;
   height: 400px;
-  top: -16%;
-  left: 67%;
+  top: -25%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   border-radius: 20px;
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* flex-direction: column; */
+  /* justify-content: center;
+  align-items: center; */
   gap: 20px;
-  transform: scale(0.1);
+  /* transform: scale(0.1); */
   visibility: hidden;
   /* z-index: 4; */
   transition: transform 1s, top 0.4s;
-  padding-bottom: 15px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.avatar {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
 }
 .profile-popup {
   visibility: visible;
@@ -765,7 +782,7 @@ footer .social-media {
   color: white;
   font-weight: bold;
   font-family: "Darker Grotesque", sans-serif;
-  font-size: 22px;
+  font-size: 20px;
   margin-left: 4px;
   transition: transform 0.2s;
 }
@@ -785,7 +802,7 @@ footer .social-media {
   justify-content: space-around;
   align-items: center;
   gap: 10px;
-  width: 60%;
+  width: 100%;
 }
 .btn-div i {
   margin-right: 16px;
@@ -795,7 +812,7 @@ footer .social-media {
   padding: 8px 10px 10px 10px;
   font-weight: bold;
   font-family: "Darker Grotesque", sans-serif;
-  font-size: 22px;
+  font-size: 18px;
   color: white;
   background-color: #151515;
   /* color: #4A5568;
@@ -1115,3 +1132,44 @@ footer .social-media {
 /* end of footer container */
 
 }
+
+
+/* Loading animation */
+
+.custom-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%);  */
+  width: 50px;
+  height: 50px;
+  display: grid;
+  border:4px solid #0000;
+  border-radius: 50%;
+  border-color:#D8D3DD #0000;
+  animation: s6 1s infinite linear;
+  z-index: -1;;
+}
+.custom-loader::before,
+.custom-loader::after {    
+  content:"";
+  grid-area: 1/1;
+  margin:2px;
+  border:inherit;
+  border-radius: 50%;
+}
+.custom-loader::before {
+  border-color:#413C86 #0000;
+  animation:inherit; 
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
+.custom-loader::after {
+  margin:8px;
+}
+
+@keyframes s6 { 
+  100%{transform: rotate(1turn)}
+}
+
+/* Loading ends here */
