@@ -12,7 +12,7 @@ async function getUserData(url) {
       console.log(item.boughtPackages);
       userName.innerText = "Hi, " + item.boughtPackages[0];
       +"..........";
-      userAmount.innerText = "Total = ₹ " + item.boughtPackages[1] + "💰";
+      userAmount.innerText = "Your Invoice Total is ₹ " + item.boughtPackages[1] + "💰";
     });
   } catch (error) {
     console.log(error);
@@ -101,3 +101,50 @@ form.addEventListener("submit", (e) => {
     // })
   }
 });
+
+let verify=document.getElementById("verify");
+let password_div=document.querySelector(".pay-password-div")
+let upiShow=document.querySelector(".upiShow")
+let enterID=document.querySelector(".enterID")
+let pay_cancel=document.querySelector(".pay-cancel")
+let myMsg = document.querySelector(".pay-msg1");
+
+verify.addEventListener("click",function(){
+ password_div.style.display="block";
+ upiShow.innerHTML=enterID.value
+ enterID.style.display="none";
+ verify.style.display="none"
+ myMsg.innerText = "Pay now for an instant boost of joy and satisfaction."
+})
+
+pay_cancel.addEventListener("click",function(){
+    password_div.style.display="none";
+    upiShow.innerHTML=""
+ enterID.style.display="block";
+ verify.style.display="block"
+ myMsg.innerText = "Buckle up! Your journey to awesomeness starts with a payment."
+})
+
+
+function paySuccess() {
+  let pay = document.querySelector(".payment-success");
+    // submit.addEventListener("click", function() {
+    document.querySelector(".container").style.filter = "blur(8px)";
+    document.querySelector(".show-total-end").style.filter = "blur(8px)";
+    document.querySelector("#display-info").style.filter = "blur(8px)";
+    document.querySelector(".custom-loader").style.zIndex = "2";
+
+    setTimeout(() => {
+      pay.classList.add("payment-success-popup");
+      pay.zIndex = "4";
+      let sec = 5;
+      let timer = document.querySelector("#timer");
+      setInterval(function () {
+        timer.innerText = `You Will be Redirected to Home Page in ${sec}`;
+        sec--;
+        if (sec == -1) {
+          window.location.href = "index.html";
+        }
+      }, 1000);
+    }, 3000);
+}

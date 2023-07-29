@@ -15,30 +15,35 @@
   </head>
   <body>
     <div class="profile">
-      <lord-icon
-        src="https://cdn.lordicon.com/dxjqoygy.json"
-        trigger="click"
-        colors="primary:#121331,secondary:#000000"
-        state="hover-nodding"
-        style="width: 150px; height: 150px"
-      >
-      </lord-icon>
-
-      <h1 class="userName"></h1>
-      <h1 class="userEmail"></h1>
-      <button id="removePopup" class="btn-okay">
-        <i class="fa-solid fa-xmark fa-lg" style="color: white"></i>
-      </button>
-
-      <div class="btn-div">
-        <button id="log-out">
-          <i class="fa-solid fa-right-from-bracket" style="color: white"></i>LOG
-          OUT
-        </button>
-        <button onclick="deleteAcc()" id="delete-account">
-          <i class="fa-solid fa-trash" style="color: white"></i>DELETE ACCOUNT
-        </button>
+      <div class="avatar">
+        <lord-icon
+          src="https://cdn.lordicon.com/dxjqoygy.json"
+          trigger="click"
+          colors="primary:#fff,secondary:#fff"
+          state="hover-nodding"
+          style="width: 150px; height: 150px"
+        >
+        </lord-icon>
       </div>
+
+      <div class="data">
+        <h2 class="userName"></h2>
+        <h2 class="userEmail"></h2>
+        <button id="removePopup" class="btn-okay">
+          <i class="fa-solid fa-xmark fa-lg" style="color: white"></i>
+        </button>
+
+        <div class="btn-div">
+          <button id="log-out">
+            <i class="fa-solid fa-right-from-bracket" style="color: white"></i>LOG
+            OUT
+          </button>
+          <button onclick="deleteAcc()" id="delete-account">
+            <i class="fa-solid fa-trash" style="color: white"></i>DELETE ACCOUNT
+          </button>
+        </div>
+      </div>
+      
     </div>
 
     <!-- Nav and Hero Section -->
